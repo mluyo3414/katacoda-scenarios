@@ -1,28 +1,32 @@
 {
-  "title": "Hello World Scenario",
-  "description": "Your First Scenario",
-  "difficulty": "beginner",
-  "time": "2 minutes",
-  "details": {
-    "steps": [{
-      "title": "Step 1 - Run Command",
-      "text": "step1.md"
-    }],
-    "intro": {
-      "text": "intro.md",
-      "credits": ""
-    },
-    "finish": {
-      "text": "finish.md"
-    }
-  },
-  "environment": {
-    "uilayout": "terminal-terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n",
-    "showdashboard": true,
-    "dashboards": {"name": "Display 8080", "port": 8080}
-  },
-  "backend": {
-    "imageid": "kubernetes-cluster-running:1.18"
-  }
+	"title": "Hello World Scenario",
+	"description": "Your First Scenario",
+	"difficulty": "beginner",
+	"time": "2 minutes",
+	"details": {
+		"steps": [{
+			"title": "Step 1 - Run Command",
+			"text": "step1.md"
+		}],
+		"intro": {
+			"text": "intro.md",
+			"credits": ""
+		},
+		"finish": {
+			"text": "finish.md"
+		}
+	},
+	"environment": {
+		"uilayout": "terminal-terminal",
+		"uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n",
+		"showdashboard": true,
+		"dashboards": {
+			"name": "Display 8080",
+			"port": 8080
+		}
+
+	},
+	"backend": {
+		"imageid": "kubernetes-cluster-running:1.18"
+	}
 }
