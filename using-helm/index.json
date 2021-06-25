@@ -1,8 +1,8 @@
 {
-	"title": "Hello World Scenario",
-	"description": "Your First Scenario",
+	"title": "Using Helm",
+	"description": "Installing and managing existing applications using a Helm Chart.",
 	"difficulty": "beginner",
-	"time": "2 minutes",
+	"time": "10 minutes",
 	"details": {
 		"steps": [{
 			"title": "Step 1 - Run Command",
