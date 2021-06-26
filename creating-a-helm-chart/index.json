@@ -1,11 +1,11 @@
 {
 	"title": "Using Helm",
-	"description": "Installing and managing existing applications using a Helm Chart.",
+	"description": "Learn to create a Helm Chart",
 	"difficulty": "beginner",
 	"time": "10 minutes",
 	"details": {
 		"steps": [{
-			"title": "Step 1 - Verify Helm version",
+			"title": "Step 1 - Review the application",
 			"text": "step1.md"
 		}],
 		"intro": {
