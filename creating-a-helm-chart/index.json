@@ -1,6 +1,6 @@
 {
-	"title": "Using Helm",
-	"description": "Learn to create a Helm Chart",
+	"title": "Create a Helm Chart",
+	"description": "Learn to create a Helm Chart for your containerized application",
 	"difficulty": "beginner",
 	"time": "10 minutes",
 	"details": {
