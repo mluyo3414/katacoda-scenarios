@@ -1,6 +1,6 @@
 {
 	"title": "Learning Helm by installing Jenkins in Kubernetes",
-	"description": "Learn how to install and manage an existing application (i.e Jenkins) using a Helm Chart.",
+	"description": "Learn how to install and manage an existing application using a public Helm Chart.",
 	"difficulty": "beginner",
 	"time": "10 minutes",
 	"details": {
