@@ -7,7 +7,16 @@
 		"steps": [{
 			"title": "Step 1 - Verify Helm version",
 			"text": "step1.md"
-		}],
+		},
+		{
+			"title": "Step 2 - Inspect Jenkins Helm chart instructions",
+			"text": "step2.md"
+		},
+		{
+			"title": "Step 3 - Install Jenkins and access the application",
+			"text": "step3.md"
+		}
+	    ],
 		"intro": {
 			"text": "intro.md",
 			"credits": "",
