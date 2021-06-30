@@ -4,4 +4,4 @@ In this first scenario, we will learn:
 * How to install and upgrade [Jenkins](https://www.jenkins.io/) from its public [Helm chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins).
 * How to interact with the Helm client to obtain useful application information.
 
-![Helm Logo](./../assets/jenkins-helm-k8s.png)
+![Helm Logo](./../assets/intro.png)
