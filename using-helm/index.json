@@ -10,7 +10,9 @@
 		}],
 		"intro": {
 			"text": "intro.md",
-			"credits": ""
+			"credits": "",
+			"code": "foreground.sh"
+
 		},
 		"finish": {
 			"text": "finish.md"
