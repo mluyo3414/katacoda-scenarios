@@ -6,4 +6,10 @@ Before we start, wait until Kubernetes has finished installing in the terminal w
 
 `helm version --short`{{execute}}
 
+### Check a few of the commands available
 
+`helm -h`{{execute}}
+
+### Verify there are no other applications installed in any namespace
+
+`helm list --all-namespaces`{{execute}}
