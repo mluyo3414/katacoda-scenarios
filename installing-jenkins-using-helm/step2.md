@@ -12,13 +12,15 @@ Notice there are two versions, one is the Helm chart version and the other one i
 
 Let's find which values the Jenkins Chart allows us to modify (the options shown are the **default** chart options).
 
-`helm show values jenkins/jenkins --version 3.4.0`{{execute}}
+Note: The `| less` option was added so you can scroll through the terminal. Exit that view mode by pressing `q`.
 
-An easier way to see all the **default** options, is to save them in a file.
+`helm show values jenkins/jenkins --version 3.4.0 | less`{{execute}}
+
+An easier way to see all the **default** options, is to save them in a file or use `| less`.
 
 `helm show values jenkins/jenkins --version 3.4.0 > values.yaml`{{execute}}
 
-You can see the values.yaml in VSCode as it is saved in the top level of the local environment.
+You can see the `values.yaml` in VSCode as it is saved in the top level of the local environment.
 
 We are going to set the application storage to false since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option around **line 710** in `values.yaml` or search for the following block:
 
@@ -26,11 +28,16 @@ We are going to set the application storage to false since our ephemeral working
 persistence:
   enabled: true
 ```
+
+Let's create a namespace to deploy Jenkins:
+
+`kubectl create ns jenkins`{{execute}}
+
 There are two ways we can customize the installation of the Jenkins chart with this option. 
 
 1. One option is to pass different values in the command line (we are going to also execute the `--dry-run` option to see what Kubernetes resources would be created but not install it):
 
-`helm install jenkins jenkins/jenkins -n jenkins --version 3.4.0 --set persistence.enabled=false --dry-run`{{execute}}
+`helm install jenkins jenkins/jenkins -n jenkins --version 3.4.0 --set persistence.enabled=false --dry-run | less`{{execute}}
 
 2. Another option is to pass the `values.yaml` file with the options (preferred method as the file can be saved in version control). Go to the `values.yaml` file we exported in VSCode and only keep the option we want to change (yes, delete the rest - Helm will only change the persistent option to false and deploy all the rest of **default** options):
 
