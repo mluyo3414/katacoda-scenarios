@@ -16,11 +16,11 @@ Let's find which values the Jenkins Chart allows us to modify (the options shown
 
 An easier way to see all the **default** options, is to save them in a file.
 
-`helm show values jenkins/jenkins -- version 3.4.0 > values.yaml`{{execute}}
+`helm show values jenkins/jenkins --version 3.4.0 > values.yaml`{{execute}}
 
 You can see the values.yaml in VSCode as it is saved in the top level of the local environment.
 
-We are going to set the application storage to false since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option in the line 711 in `values.yaml` or search for the following block:
+We are going to set the application storage to false since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option around **line 710** in `values.yaml` or search for the following block:
 
 ```
 persistence:
@@ -37,14 +37,16 @@ There are two ways we can customize the installation of the Jenkins chart with t
 ```
 persistence:
   enabled: false
-```
+```{{copy}}
 
 Now let's run the command (still with dry-run as we are not installing yet!):
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.4.0 -f values.yaml --dry-run`{{execute}}
 
-Did you notice how you were able to see all the resources that were going to be created in your Kubernetes cluster when you added the `--dry-run` command (pod, serviceAccount, configMap, etc)? Helm actually creates all those YAML files for you, an easier way to see the actual files is to use `helm template`. This command actually gives you the files that you can run just using `kubectl apply -f` (this is useful in cases where Helm is no available in the machine that is connected to your Kubernetes cluster):
+Did you notice how you were able to see all the resources that were going to be created in your Kubernetes cluster when you added the `--dry-run` command (pod, serviceAccount, configMap, etc)? 
 
-`helm template jenkins jenkins/jenkins -n jenkins --version 3.4.0 -f values.yaml --dry-run > resources.yaml`
+Helm actually creates all those YAML files for you, an easier way to see the actual files is to use `helm template`. This command actually gives you the files that you can run just using `kubectl apply -f` (this is useful in cases where Helm is no available in the machine that is connected to your Kubernetes cluster):
+
+`helm template jenkins jenkins/jenkins -n jenkins --version 3.4.0 -f values.yaml --dry-run > resources.yaml`{{execute}}
 
 Take a look at the `resources.yaml` file in VSCode and see all the resources that Helm will install for you.
