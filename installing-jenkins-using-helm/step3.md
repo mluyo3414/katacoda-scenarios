@@ -4,11 +4,11 @@ Now let's install Jenkins with the `values.yaml` file:
 
 Also, you can see if the pod is running:
 
-`kubectl get pods -n jenkins -w`{{execute}}
+`kubectl get pods -n jenkins -w`{{execute}} (`-w` to follow but it is optional)
 
-Press `Control+C` to exit once the pod `Status` is `Running`. It should take around a minute. 
+Press `Control+C` to exit once the pod `Status` is `Running`. It should take a few minutes. 
 
-You can see the status and useful information of the Helm deployment (the same message that you just when you executed `helm install ...`) by running:
+You can see the status and useful information about the Helm deployment (the same message that you just when you executed `helm install ...`) by running:
 
 `helm status jenkins -n jenkins`{{execute}}
 
@@ -34,13 +34,15 @@ Now, lets upgrade to the version `3.4.1` with the same parameters (you can also 
 
 `helm upgrade jenkins jenkins/jenkins -n jenkins --version 3.4.1 -f values.yaml`{{execute}}
 
-Wait for the new pod to start running. Now double check that a new application was deployed:
+Wait for the new pod to start running `kubectl get pods -n jenkins -w`{{execute}}. `Control + C` once pod is running.
+
+Now double check that a new application was deployed:
 
 `helm list --all-namespaces`{{execute}} should provide revision 2 for your application, 3.4.1 for your chart version and application version 2.289.1. 
 
 ![upgrade](./../assets/upgrade.png)
 
-Once you login to the UI using `kubectl port-forward jenkins-0 8080:8080 --address 0.0.0.0 -n jenkins`{{execute}} to expose the application and open a new window, you should be able to see that the application version in the bottom right is `Jenkins 2.289.1`
+Run `kubectl port-forward jenkins-0 8080:8080 --address 0.0.0.0 -n jenkins`{{execute}} to expose the application. Open a new window again by clicking `Display 8080`, login user the same `admin` username and the same password as before. You should be able to see that the application version in the bottom right is `Jenkins 2.289.1` now.
 
 
 

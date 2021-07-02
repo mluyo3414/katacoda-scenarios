@@ -5,11 +5,11 @@
 	"time": "10 minutes",
 	"details": {
 		"steps": [{
-			"title": "Step 1 - Validating the local environment",
+			"title": "Step 1 - Validate the local environment",
 			"text": "step1.md"
 		},
 		{
-			"title": "Step 2 - Inspect Jenkins Helm chart instructions",
+			"title": "Step 2 - Inspect Jenkins Helm chart",
 			"text": "step2.md"
 		},
 		{
