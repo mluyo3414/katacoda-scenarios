@@ -7,7 +7,7 @@ deployment:
     image: mluyo3414/hello-kubernetes
     tag: 1.11
 ```{{copy}}
-Go to the `image` section in the `deployment.yaml` from:
+Go to the `image` sections (line 24 and 52) in the `deployment.yaml` from:
 
 ```
 image: "mluyo3414/hello-kubernetes:1.10"
@@ -18,8 +18,6 @@ to:
 ```
 image: {{  .Values.deployment.image  }}:{{  .Values.deployment.tag  }}
 ```{{copy}}
-
-**Also change all version references from 1.10 to 1.11 in that file.**
 
 Helm uses Go templating to insert variables. Let's upgrade our already installed application to the new version `1.11` (make sure you are inside the correct folder `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}}`):
 
