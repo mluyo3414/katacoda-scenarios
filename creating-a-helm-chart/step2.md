@@ -30,54 +30,5 @@ Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` und
 
 * **`templates/`**: All YAML files we would like to include in the Chart (`service.yaml`, `serviceaccount.yaml`, and `deployment.yaml` in our case for the `hello-kubernetes` application).
 
-Let's cleanup the template and add our application YAML files (under `/root/hello-kubernetes/deploy/resources/helm)`.
-
-* Delete the **`templates/tests`** folder inside.
-
-* Delete everything on **`templates`** besides **`_helpers.tpl`** file.
-
-* Move the **`serviceaccount.yaml`**, **`deployment.yaml`**, and **`service.yaml`** into the **`templates/`** directory to be used by the Chart.
-
-
-This is how the final configuration under `/root/hello-kubernetes/deploy/resources` should look like:
-```
-├── all-resources.yaml
-└── helm
-    └── hello-kubernetes
-        ├── charts
-        ├── Chart.yaml
-        ├── templates
-        │   ├── deployment.yaml
-        │   ├── _helpers.tpl
-        │   ├── serviceaccount.yaml
-        │   └── service.yaml
-        └── values.yaml
-```
-
-* Inspect the `Chart.yaml` file. Notice how there is a `version` for the chart version and a `appVersion` for the application version itself.
-
-Go to the `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}} directory and test that the chart can be rendered `helm template [NAME] [FOLDER]`:
-
-`helm template hello-kubernetes . | less`{{execute}}
-
-You should see all the resources that Helm will create (the same as the resource files we copied into `/templates`). Press `q` to exit from the view.
-
-Finally let's install our basic chart `helm install [NAME] [FOLDER]`:
-
-`helm install hello-kubernetes .`{{execute}}
-
-Check details of the deployment:
-
-`helm list`{{execute}}
-
-Check all the resources deployed in Kubernetes:
-`kubectl get all`{{execute}}
-
-Expose the application to verify it is running:
-`POD=$(kubectl get pod -o jsonpath="{.items[0].metadata.name}")`{{execute}}
-`kubectl port-forward $POD 8080:8080 --address 0.0.0.0`{{execute}}
-
-Click the `Display 8080` tab in the terminal window. Notice how the image version is `1.10`
-
 
 

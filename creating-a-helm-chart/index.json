@@ -9,12 +9,20 @@
 			"text": "step1.md"
 		},
 		{
-			"title": "Install using Helm",
+			"title": "Create a Helm chart template",
 			"text": "step2.md"
 		},
 		{
-			"title": "Changing values in the chart",
+			"title": "Adding application files to the template",
 			"text": "step3.md"
+		},
+		{
+			"title": "Installing the application",
+			"text": "step4.md"
+		},
+		{
+			"title": "Changing values in the chart",
+			"text": "step5.md"
 		}
 	],
 		"intro": {

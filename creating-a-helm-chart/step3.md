@@ -1,41 +1,32 @@
-Let's insert some variables in our chart to make it easier to deploy it in different environments. We will start by changing the image version to `1.11`.
+Let's cleanup the template and add our application YAML files (under `/root/hello-kubernetes/deploy/resources/helm)`.
 
-Go to `values.yaml` and change:
+* Delete the **`templates/tests`** folder inside.
 
+* Delete everything on **`templates`** besides **`_helpers.tpl`** file.
+
+* Move the **`serviceaccount.yaml`**, **`deployment.yaml`**, and **`service.yaml`** into the **`templates/`** directory to be used by the Chart.
+
+
+This is how the final configuration under `/root/hello-kubernetes/deploy/resources` should look like:
 ```
-deployment:
-    image: mluyo3414/hello-kubernetes
-    tag: 1.11
-```{{copy}}
-Go to the `image` sections (line 24 and 52) in the `deployment.yaml` from:
-
+├── all-resources.yaml
+└── helm
+    └── hello-kubernetes
+        ├── charts
+        ├── Chart.yaml
+        ├── templates
+        │   ├── deployment.yaml
+        │   ├── _helpers.tpl
+        │   ├── serviceaccount.yaml
+        │   └── service.yaml
+        └── values.yaml
 ```
-image: "mluyo3414/hello-kubernetes:1.10"
-```
 
-to:
+* Inspect the `Chart.yaml` file. Notice how there is a `version` for the chart version and a `appVersion` for the application version itself.
 
-```
-image: {{  .Values.deployment.image  }}:{{  .Values.deployment.tag  }}
-```{{copy}}
+Go to the `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}} directory and test that the chart can be rendered `helm template [NAME] [FOLDER]`:
 
-Helm uses Go templating to insert variables. Let's upgrade our already installed application to the new version `1.11` (make sure you are inside the correct folder `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}}`):
+`helm template hello-kubernetes . | less`{{execute}}
 
-`helm upgrade hello-kubernetes . --values values.yaml`{{execute}}
-
-Check details of the deployment:
-
-`helm list`{{execute}}
-
-Check all the resources deployed in Kubernetes:
-`kubectl get all`{{execute}}
-
-Expose the application to verify it is running:
-`POD=$(kubectl get pod -o jsonpath="{.items[0].metadata.name}")`{{execute}}
-`kubectl port-forward $POD 8080:8080 --address 0.0.0.0`{{execute}}
-
-Click the `Display 8080` tab in the terminal window. Notice how the image version is `1.10`
-
-
-
+You should see all the resources that Helm will create (the same as the resource files we copied into `/templates`). Press `q` to exit from the view.
 
