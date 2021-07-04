@@ -1,3 +1,10 @@
+We are going to set the **application storage** to **false** since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option  **in or around line 707** in `values.yaml`:
+
+```
+persistence:
+  enabled: true
+```
+
 There are two ways we can customize the installation of the Jenkins chart with this option. 
 
 One option is to pass different values in the command line (we are going to also execute the `--dry-run` as we are not installing yet):

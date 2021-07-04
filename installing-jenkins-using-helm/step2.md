@@ -25,10 +25,3 @@ An easier way to see all the **default** options, is to save them in a file.
 `helm show values jenkins/jenkins --version 3.3.21 > values.yaml`{{execute}}
 
 You can see the `values.yaml` in VSCode as it is saved in the top level of the local environment. Scroll to the bottom of all files.
-
-We are going to set the **application storage** to **false** since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option  **in or around line 707** in `values.yaml`:
-
-```
-persistence:
-  enabled: true
-```
