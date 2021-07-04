@@ -14,11 +14,11 @@
 		},
 		{
 			"title": "Step 3 - Install Jenkins Chart",
-			"text": "step2.md"
+			"text": "step3.md"
 		},
 		{
 			"title": "Step 3 - Update Jenkins",
-			"text": "step3.md"
+			"text": "step4.md"
 		}
 	    ],
 		"intro": {
