@@ -10,7 +10,7 @@ deployment:
   tag: "1.11"
 ```{{copy}}
 
-*Go to the `image` section (around line 23) in the `deployment.yaml` from:
+* Go to the `image` section (around line 23) in the `deployment.yaml` from:
 
 ```
 image: "mluyo3414/hello-kubernetes:1.10"
