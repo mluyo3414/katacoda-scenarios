@@ -4,7 +4,7 @@ Start by cloning the application:
 
 Now you can see the application in the top folder of the VSCode window on the top right.
 
-There are **four** files inside **`hello-kubernetes/deploy/resources`**. **`serviceaccount.yaml`**, **`deployment.yaml`**, and **`service.yaml`** that compose the pplication (**`all-resources.yaml`** is a single file that includes all resources)  :
+There are **four** files that compose the application under **`hello-kubernetes/deploy/resources`** (**`all-resources.yaml`** is a single file that includes all resources):
 
 * `serviceaccount.yaml` : A service account provides an identity for processes that run in a Pod. 
 
