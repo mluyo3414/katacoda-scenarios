@@ -1,5 +1,7 @@
-Helm is the Kubernetes native package manager
+In this tutorial, we will learn how to create a Helm chart to maintain an example application - https://github.com/mluyo3414/hello-kubernetes (credit to paulbouwer who created it). 
 
-Learning Objectives:
+* [Kubernetes](https://kubernetes.io/), also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. 
 
-- Learn to search r
+* [Helm](https://helm.sh/) is the Kubernetes native package manager, it allows to install and manage applications in Kubernetes without the need to deploy multiple resource files (YAML files). 
+
+The example application consists on a [serviceAccount](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/), a [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) and a [service](https://kubernetes.io/docs/concepts/services-networking/service/) which are already created.

@@ -24,9 +24,9 @@ An easier way to see all the **default** options, is to save them in a file.
 
 `helm show values jenkins/jenkins --version 3.3.21 > values.yaml`{{execute}}
 
-You can see the `values.yaml` in VSCode as it is saved in the top level of the local environment.
+You can see the `values.yaml` in VSCode as it is saved in the top level of the local environment. Scroll to the bottom of all files.
 
-We are going to set the **application storage** to **false** since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option  ** in or around line 707** in `values.yaml` or search for the following block:
+We are going to set the **application storage** to **false** since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option  **in or around line 707** in `values.yaml`:
 
 ```
 persistence:
@@ -39,7 +39,7 @@ One option is to pass different values in the command line (we are going to also
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 --set persistence.enabled=false --dry-run`{{execute}}
 
-Another option is to pass the `values.yaml` file with the options (preferred method as the file can be saved in version control). Go to the `values.yaml` file we exported in VSCode and only keep the option we want to change (**Yes, delete the rest** - Helm will only change the persistent option to false and deploy all the rest of **default** options):
+Another option is to pass the `values.yaml` file with the desired options (this is usually the preferred method as the file can be saved in version control). Go to the `values.yaml` file we created in VSCode, delete everything the persistence options we want to change (**Yes, delete the rest** - Helm will only change the persistent option to false and deploy all the rest of **default** options):
 
 ```
 persistence:
