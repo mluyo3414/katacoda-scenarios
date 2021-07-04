@@ -1,10 +1,12 @@
 Let's cleanup the template and add our application YAML files (under `/root/hello-kubernetes/deploy/resources/helm)`.
 
-* Delete the **`templates/tests`** folder inside.
+* Delete the **`templates/tests`** folder inside:
 
-* Delete everything on **`templates`** besides **`_helpers.tpl`** file.
+`rm -rf /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/templates/tests/`{{execute}}
 
-* Move the **`serviceaccount.yaml`**, **`deployment.yaml`**, and **`service.yaml`** into the **`templates/`** directory to be used by the Chart.
+* Select and delete everything on **`templates`** besides **`_helpers.tpl`** file (using VSCode).
+
+* Move the **`serviceaccount.yaml`**, **`deployment.yaml`**, and **`service.yaml`** into the **`templates/`** directory to be used by the Chart (using VSCode).
 
 
 This is how the final configuration under `/root/hello-kubernetes/deploy/resources` should look like:
