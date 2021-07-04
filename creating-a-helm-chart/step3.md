@@ -4,10 +4,17 @@ Let's cleanup the template and add our application YAML files (under `/root/hell
 
 `rm -rf /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/templates/tests/`{{execute}}
 
-* Select and delete everything on **`templates`** besides **`_helpers.tpl`** file (using VSCode).
+* Select and delete all the example files under **`templates`** besides **`_helpers.tpl`** file (using VSCode).
 
-* Move the **`serviceaccount.yaml`**, **`deployment.yaml`**, and **`service.yaml`** into the **`templates/`** directory to be used by the Chart (using VSCode).
+```
+deployment.yaml
+ingress.yaml
+NOTES.txt
+service.yaml
+serviceaccount.yaml
+```
 
+* Select and move the `hello-kubernetes` application files: **`serviceaccount.yaml`**, **`deployment.yaml`**, and **`service.yaml`** into the **`templates/`** directory to be used by the Chart (using VSCode).
 
 This is how the final configuration under `/root/hello-kubernetes/deploy/resources` should look like:
 ```
@@ -23,6 +30,9 @@ This is how the final configuration under `/root/hello-kubernetes/deploy/resourc
         │   └── service.yaml
         └── values.yaml
 ```
+
+You can verify the folder structure by running:
+`tree /root/hello-kubernetes/deploy/resources/`{{execute}}
 
 * Inspect the `Chart.yaml` file. Notice how there is a `version` for the chart version and a `appVersion` for the application version itself.
 
