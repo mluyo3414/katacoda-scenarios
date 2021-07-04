@@ -32,10 +32,21 @@ Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` und
 
 Let's cleanup the template so we can use our application YAML files with a basic structure.
 
-* Delete the `template/tests` folder:
+* Delete the **`templates/tests`** folder:
 
-* Delete everything on `templates` besides `_helpers.tpl` file:
+* Delete everything on **`templates`** besides **`_helpers.tpl`** file:
 
+* Inspect the `Chart.yaml` file. Notice how there is a `version` for the chart version and a `appVersion` for the application version itself.
+
+Now we can copy the **`serviceaccount.yaml`**, **`deployment.yaml`**, and **`service.yaml`** into the **`templates/'** directory to be used by the Chart. This is how the final configuration should look like:
+```
+
+d
+```
+
+Go to the `hello-kubernetes` directory and test that the chart can be rendered:
+
+`helm template hello-kubernetes .`{{execute}}
 
 
 
