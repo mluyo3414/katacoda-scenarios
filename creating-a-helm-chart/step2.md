@@ -32,9 +32,9 @@ Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` und
 
 Let's cleanup the template so we can use our application YAML files with a basic structure.
 
-* Delete the `test` folder:
+* Delete the `template/tests` folder:
 
-* Delete everything on `templates` besides `.helmignore`:
+* Delete everything on `templates` besides `_helpers.tpl` file:
 
 
 
