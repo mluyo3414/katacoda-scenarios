@@ -4,6 +4,6 @@ In this tutorial, we will learn how to create a Helm chart to maintain an exampl
 
 * [Helm](https://helm.sh/) is the Kubernetes native package manager, it allows to install and manage applications in Kubernetes without the need to deploy multiple resource files (YAML files). 
 
-* [Helm Chart](https://helm.sh/docs/topics/charts/) A chart is a collection of files that describe a related set of Kubernetes resources.
+* A [Helm Chart](https://helm.sh/docs/topics/charts/) is a collection of files that describe a related set of Kubernetes resources.
 
-The example application consists on a [serviceAccount](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/), a [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) and a [service](https://kubernetes.io/docs/concepts/services-networking/service/) which are already created.
+The example application consists on a [service account](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/), a [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) and a [service](https://kubernetes.io/docs/concepts/services-networking/service/) which are already created.
