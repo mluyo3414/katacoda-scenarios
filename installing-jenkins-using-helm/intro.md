@@ -4,19 +4,19 @@ In this tutorial, you will learn how to install a containerized version of [Jenk
 
 * Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. Learn more about Kubernetes and its advantages in [this link](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/).
 
-* Helm is the Kubernetes native package manager, it allows to install and manage applications in Kubernetes without the need to deploy multiple resource files. 
+* Helm is the Kubernetes native package manager, it allows to install and manage applications in Kubernetes without the need to deploy multiple resource files **(usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc that are configured using multiple YAML files).** 
 
 * Finally, Jenkins is a widely used automation tool that can leverage Kubernetes to deploy other containers (called [agents](https://www.jenkins.io/doc/book/using/using-agents/)) and run tasks in them (usually focused on building, testing and deploying other applications).
 
 
 ## [The purpose of Helm](https://helm.sh/docs/topics/architecture/)
 
-Helm is a tool for managing Kubernetes packages called *charts*. Helm can do the following:
+Helm is a tool for managing Kubernetes packages called **charts**. Helm can do the following:
 
 * Create new charts from scratch
 * Package charts into chart archive (tgz) files
-* *Interact with chart repositories where charts are stored (in this tutorial)*
-* *Install and uninstall charts into an existing Kubernetes cluster (in this tutorial)*
+* **Interact with chart repositories where charts are stored (in this tutorial)**
+* **Install and uninstall charts into an existing Kubernetes cluster (in this tutorial)**
 * Manage the release cycle of charts that have been installed with Helm
 
 For Helm, there are three important concepts:
