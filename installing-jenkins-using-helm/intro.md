@@ -9,11 +9,16 @@ In this scenario, we will learn:
 * How to install and upgrade a [Jenkins controller](https://www.jenkins.io/doc/book/glossary/#general-terms) from its public [Helm chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins).
 * How to interact with the Helm client to obtain useful application information.
 
+## Prerequisites
+
+1. Familiarity with the terminal and have some knowledge about containerization.
+
 ## Learning Objectives
 
-1. Understand what Helm is and its role in  Kubernetes
-2. Become familiar with the Helm client by using it to deploy the Jenkins chart.
-3. Learn necessary Helm client commands to inspect, install, and verify a Helm public chart.
+1. Understand what Helm is and its role in Kubernetes.
+2. Become familiar with the Helm client.
+3. Learn the necessary Helm client commands to inspect, install, and upgrade a Helm public chart.
+4. Learn how to verify an application is installed when using Helm
 
 
 ![Helm Logo](./../assets/intro.png)
