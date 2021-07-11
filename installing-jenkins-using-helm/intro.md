@@ -15,8 +15,8 @@ Helm is a tool for managing Kubernetes packages called *charts*. Helm can do the
 
 * Create new charts from scratch
 * Package charts into chart archive (tgz) files
-* Interact with chart repositories where charts are stored (in this tutorial)
-* Install and uninstall charts into an existing Kubernetes cluster (in this tutorial)
+* *Interact with chart repositories where charts are stored (in this tutorial)*
+* *Install and uninstall charts into an existing Kubernetes cluster (in this tutorial)*
 * Manage the release cycle of charts that have been installed with Helm
 
 For Helm, there are three important concepts:
