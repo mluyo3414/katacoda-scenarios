@@ -1,6 +1,6 @@
 ## Overview
 
-In this tutorial, you will learn how to install a containerized version of [Jenkins](https://www.jenkins.io/) in [Kubernetes](https://kubernetes.io/) using [Helm](https://helm.sh/). 
+In this tutorial, you will learn how to install a containerized version of [Jenkins](https://www.jenkins.io/) in [Kubernetes](https://kubernetes.io/) using [Helm](https://helm.sh/). Especifically, we will install and upgrade a [Jenkins controller](https://www.jenkins.io/doc/book/glossary/#general-terms) from its public [Helm chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins).
 
 * Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. Learn more about Kubernetes and its advantages in [this link](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/).
 
@@ -25,10 +25,6 @@ For Helm, there are three important concepts:
 * The config contains configuration information that can be merged into a packaged chart to create a releasable object.
 * A release is a running instance of a chart, combined with a specific config.
 
-In this scenario, we will learn:
-* How to install and upgrade a [Jenkins controller](https://www.jenkins.io/doc/book/glossary/#general-terms) from its public [Helm chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins).
-* How to interact with the Helm client to obtain useful application information.
-
 
 ## Prerequisites
 
@@ -37,7 +33,7 @@ In this scenario, we will learn:
 ## Learning Objectives
 
 1. Understand what Helm is and its role in Kubernetes.
-2. Become familiar with the Helm client using the terminal.
+2. Become familiar with the Helm client using the terminal and obtain useful application information.
 3. Learn the necessary Helm client commands to inspect, install, and upgrade a Helm public chart.
 4. Learn how to verify an application is installed when using Helm
 
