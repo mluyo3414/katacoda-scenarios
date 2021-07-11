@@ -9,3 +9,5 @@ Start by verifying that the **Helm client** is installed.
 Verify there are no other applications installed in any namespace:
 
 `helm list --all-namespaces`{{execute}}
+
+Use `helm -h` to understand any command through this tutorial.
