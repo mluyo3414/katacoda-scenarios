@@ -1,3 +1,9 @@
+Use:
+
+`helm template hello-kubernetes . | less`{{execute}}
+
+You should see all the resources that Helm will create (the same as the resource files we copied into `/templates`). Press `q` to exit from the view.
+
 Finally let's install our basic chart `helm install [NAME] [FOLDER]`:
 
 `helm install hello-kubernetes .`{{execute}}
