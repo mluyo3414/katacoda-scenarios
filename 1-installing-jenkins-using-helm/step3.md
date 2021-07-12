@@ -1,3 +1,7 @@
+The correct command to install an application is:
+
+`helm install `
+
 We are going to set the **application storage** to **false** since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option  **in or around line 707** in `values.yaml`:
 
 ```
