@@ -52,7 +52,13 @@ Expose the application to verify it is running:
 Click the `Display 8080` tab in the terminal window. Notice how the image version is `1.11`. Press `Control + C` to stop forwarding.
 
 
-You can run kubectl get all -n jenkins{{execute}} and see all the Kubernetes resources deployed by Helm. This is a simple application but Helm provides easier management for complicated applications that can be composed of several resources without the need to keep track of multiple YAML files.
+You can run kubectl get all -n jenkins{{execute}} and see all the Kubernetes resources deployed by Helm. 
+
+This is a simple application but Helm provides easier management for complicated applications that can be composed of several resources without the need to keep track of multiple YAML files.
+
+### Try creating a new variable yourself:
+
+Look at the metadata.name field in the `deployment.yaml` or `service.yaml` we are using for our chart. Notice how the value for this field is the same string `hello-kubernetes-hello-kubernetes`. How would you templatize it so it can be assigned in values.yaml?
 
 
 
