@@ -14,12 +14,6 @@ In this tutorial, we will learn how to create a new Helm chart to maintain an ex
 * A [Helm Chart](https://helm.sh/docs/topics/charts/) is a collection of files that describe a related set of Kubernetes resources.
 
 
-## Application components
-
-
-The example application consists on a [service account](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/), a [deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) and a [service](https://kubernetes.io/docs/concepts/services-networking/service/) which are already created.
-
-
 ## Prerequisites
 
 
@@ -29,6 +23,7 @@ The example application consists on a [service account](https://kubernetes.io/do
 
 ## Learning Objectives
 
+At the end of this scenario, you should:
 
 1. Understand some of the basic components needed to deploy an application in Kubernetes.
 2. Learn how to create a basic Helm chart using those files.
