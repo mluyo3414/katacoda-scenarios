@@ -19,7 +19,7 @@ Jenkins is composed of Kubernetes resources such as:
 
 ## Why using Helm?
 
-**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc that are configured using multiple YAML files ([deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)). One of Helm's intent is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environment, upgrade, etc). In our case, Jenkins k8s components (statefulSet and service) will be managed by Helm. ** 
+**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc that are configured using multiple YAML files ([deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)). One of Helm's intent is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environment, upgrade, etc). In our case, Jenkins k8s components (statefulSet and service) will be managed by Helm.** 
 
 
 ## [Overall usage of Helm](https://helm.sh/docs/topics/architecture/)
@@ -44,11 +44,13 @@ For Helm, there are three important concepts:
 
 ## Learning Objectives
 
+At the end of this scenario, you should:
+
 1. Understand what Helm is and its role in Kubernetes.
-2. Become familiar with the Helm client using the terminal and obtain useful application information.
-3. Learn the necessary Helm client commands to inspect, install, and upgrade a Helm public chart.
-4. Learn how to verify an application is installed when using Helm.
-5. Inspect all k8s resources installed that are part of Jenkins.
+2. Be familiar with the Helm client using the terminal and obtain useful application information.
+3. Know the necessary Helm client commands to inspect, install, and upgrade a Helm public chart.
+4. Know how to verify an application is installed when using Helm.
+5. Know and verify all k8s resources installed that are part of Jenkins.
 
 
 ![Helm Logo](./../assets/intro.png)
