@@ -6,8 +6,4 @@ Start by verifying that the **Helm client** is installed.
 
 `helm version --short`{{execute}}
 
-Verify there are no other applications installed in any namespace:
-
-`helm list --all-namespaces`{{execute}}
-
-Use `helm -h` to understand any command through this tutorial.
+Use `helm -h` to help you  get more information about any command used through this tutorial.
