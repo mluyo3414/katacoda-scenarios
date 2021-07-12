@@ -1,3 +1,6 @@
+We need to include `service.yaml`, `serviceaccount.yaml`, and `deployment.yaml` in our case for the `hello-kubernetes` application.
+
+
 Let's cleanup the template and add our application YAML files (under `/root/hello-kubernetes/deploy/resources/helm)`.
 
 * Delete the **`templates/tests`** folder inside:
@@ -38,7 +41,6 @@ You can verify the folder structure by running:
 
 Go to the `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}} directory and test that the chart can be rendered `helm template [NAME] [FOLDER]`:
 
-`helm template hello-kubernetes . | less`{{execute}}
+Which command do we have to use to see all the files/K8s resources that our Helm Chart will create?
 
-You should see all the resources that Helm will create (the same as the resource files we copied into `/templates`). Press `q` to exit from the view.
-
+Click *Continue*
