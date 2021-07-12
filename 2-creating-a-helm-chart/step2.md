@@ -1,4 +1,10 @@
-Start by cloning the application:
+
+You can use `helm list` to verify there are no other applications installed in any namespace:
+
+`helm list --all-namespaces`{{execute}}
+
+
+Now, let's start by cloning the application:
 
 `git clone https://github.com/mluyo3414/hello-kubernetes.git`{{execute}}
 
@@ -28,7 +34,12 @@ Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` und
 
 * **`values.yaml`**: File where we can define/overwrite variables for the Chart: things like image tag, persistent volumes, etc. This specific file in our repo will contain the default values but it can be replaced by other `values.yaml` when we want to install the application somewhere else.
 
-* **`templates/`**: All YAML files we would like to include in the Chart (`service.yaml`, `serviceaccount.yaml`, and `deployment.yaml` in our case for the `hello-kubernetes` application).
+* **`templates/`**: All Kubernetes YAML files we would like to include in the Chart.
+
+
+Which files do you think you need to include under `templates/` folder to create a chart for the `hello-kubernetes` application?
+
+Click *Continue* to see the response in the next screen.
 
 
 
