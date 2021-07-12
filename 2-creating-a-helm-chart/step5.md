@@ -54,6 +54,5 @@ Click the `Display 8080` tab in the terminal window. Notice how the image versio
 
 You can run kubectl get all -n jenkins{{execute}} and see all the Kubernetes resources deployed by Helm. This is a simple application but Helm provides easier management for complicated applications that can be composed of several resources without the need to keep track of multiple YAML files.
 
-**Please take this [quiz](https://forms.gle/fEPAdta7CAA1JGgY8) to validate your knowledge after the tutorials. Also, please provide me [feedback](https://forms.gle/4UcbcuAVBXmDGdtQ9to) to improve these tutorials.**
 
 
