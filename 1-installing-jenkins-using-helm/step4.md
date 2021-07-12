@@ -20,6 +20,4 @@ Run `kubectl port-forward jenkins-0 8080:8080 --address 0.0.0.0 -n jenkins`{{exe
 
 You can run  `kubectl get all -n jenkins`{{execute}} and see all the Kubernetes resources deployed by Helm. This is a simple application but Helm provides easier management for complicated applications that can be composed of several resources without the need to keep track of multiple YAML files.
 
-Now go to the part 2 of this tutorial to learn how to (create your own Helm chart)[https://katacoda.com/msuarez/scenarios/2-creating-a-helm-chart]
-
 
