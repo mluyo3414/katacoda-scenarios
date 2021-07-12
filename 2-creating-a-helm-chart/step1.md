@@ -8,4 +8,4 @@ Start by verifying that the **Helm client** is installed.
 
 How would you make sure that there are no other applications installed in any namespace?
 
-Click *continue* to see the answer in the next step.
+Click *Continue* to see the answer in the next step.
