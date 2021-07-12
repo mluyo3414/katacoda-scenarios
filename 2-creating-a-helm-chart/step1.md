@@ -6,6 +6,6 @@ Start by verifying that the **Helm client** is installed.
 
 `helm version --short`{{execute}}
 
-Verify there are no other applications installed in any namespace:
+How would you make sure that there are no other applications installed in any namespace?
 
-`helm list --all-namespaces`{{execute}}
+Click *continue* to see the answer in the next step.
