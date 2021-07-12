@@ -58,7 +58,7 @@ This is a simple application but Helm provides easier management for complicated
 
 ### Try creating a new variable yourself:
 
-Look at the metadata.name field in the `deployment.yaml` or `service.yaml` we are using for our chart. Notice how the value for this field is the same string `hello-kubernetes-hello-kubernetes`. How would you templatize it so it can be assigned in values.yaml?
+Look at the `metadata.name` field in the `deployment.yaml` or `service.yaml` we are using for our chart. Notice how the value for this field is the same string `hello-kubernetes-hello-kubernetes`. How would you templatize it so it can be assigned in values.yaml?
 
 
 
