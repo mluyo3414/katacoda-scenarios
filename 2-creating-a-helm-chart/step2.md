@@ -8,9 +8,9 @@ Now, let's start by cloning the application:
 
 `git clone https://github.com/mluyo3414/hello-kubernetes.git`{{execute}}
 
-Now you can see the application in the top folder of the VSCode window on the top right.
+Now you can see the application in the top folder of the VSCode window on the top right. The application code and `Dockerfile` are located under `/src/app`.
 
-There are **four** files that compose the application under **`hello-kubernetes/deploy/resources`** (**`all-resources.yaml`** is a single file that includes all resources):
+There are **four** files that represent the resources needed to deploy the application in Kubernetes. They are located under **`hello-kubernetes/deploy/resources`** (**`all-resources.yaml`** is a single file that includes all resources):
 
 * `serviceaccount.yaml` : A service account provides an identity for processes that run in a Pod. 
 
