@@ -18,6 +18,5 @@ Now double check that a new application was deployed:
 
 Run `kubectl port-forward jenkins-0 8080:8080 --address 0.0.0.0 -n jenkins`{{execute}} to expose the application. Open a new window again by clicking `Display 8080`, login user the same `admin` username and the same password as before. You should be able to see that the application version in the bottom right is `Jenkins 2.289.1` now. Exit the port-forward by pressing `Control+C` in the terminal.
 
-You can run  `kubectl get all -n jenkins`{{execute}} and see all the Kubernetes resources deployed by Helm. This is a simple application but Helm provides easier management for complicated applications that can be composed of several resources without the need to keep track of multiple YAML files.
-
+You can run  `kubectl get all -n jenkins`{{execute}} and see all the Kubernetes resources deployed by Helm. 
 
