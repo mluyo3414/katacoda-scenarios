@@ -41,6 +41,6 @@ You can verify the folder structure by running:
 
 Go to the `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}} directory and test that the chart can be rendered `helm template [NAME] [FOLDER]`:
 
-Which command do we have to use to see all the files/K8s resources that our Helm Chart will create?
+**Which command do we have to use to see all the files/K8s resources that our Helm Chart will create?**
 
 Click *Continue*
