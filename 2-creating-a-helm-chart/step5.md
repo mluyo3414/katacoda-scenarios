@@ -51,6 +51,6 @@ Expose the application to verify it is running:
 
 Click the `Display 8080` tab in the terminal window. Notice how the image version is `1.11`. Press `Control + C` to stop forwarding.
 
-Please head over [this quiz and feedback form](https://forms.gle/fEPAdta7CAA1JGgY8) to improve these tutorials. 
+**Please take this [quiz](https://forms.gle/fEPAdta7CAA1JGgY8) to validate your knowledge after the tutorials. Also, please provide me [feedback](https://forms.gle/4UcbcuAVBXmDGdtQ9to) to improve these tutorials.**
 
 
