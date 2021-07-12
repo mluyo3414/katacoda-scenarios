@@ -64,6 +64,8 @@ Click on `Display 8080` in the terminal options so it opens a new window:
 
 Login with the user **admin** and the password you retrieved. Notice in the bottom right that the application version is `Jenkins 2.277.4`. 
 
-Go back to the terminal window and press `Control+C` to stop forwarding. Run helm list again to see the deployed application:
+Go back to the terminal window and press `Control+C` to stop forwarding. 
 
-`helm list --all-namespaces`{{execute}}
+What command do you think you can use to see all the applications installed using Helm?
+
+Click on `Continue` to see the correct answer.
