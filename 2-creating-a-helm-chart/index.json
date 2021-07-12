@@ -1,0 +1,50 @@
+{
+	"title": "Helm tutorial part 2: Creating a Helm Chart",
+	"description": "Learn how to create a Helm Chart for your containerized application",
+	"difficulty": "beginner",
+	"time": "10 minutes",
+	"details": {
+		"steps": [{
+			"title": "Review environment",
+			"text": "step1.md"
+		},
+		{
+			"title": "Create a Helm chart template",
+			"text": "step2.md"
+		},
+		{
+			"title": "Adding application files to the template",
+			"text": "step3.md"
+		},
+		{
+			"title": "Installing the application",
+			"text": "step4.md"
+		},
+		{
+			"title": "Changing values in the chart",
+			"text": "step5.md"
+		}
+	],
+		"intro": {
+			"text": "intro.md",
+			"credits": "",
+			"code": "foreground.sh"
+		},
+		"finish": {
+			"text": "finish.md"
+		}
+	},
+	"environment": {
+		"uilayout": "vscode-terminal-split",
+		"uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n",
+		"showdashboard": true,
+		"dashboards": [{
+			"name": "Display 8080",
+			"port": 8080
+		}]
+
+	},
+	"backend": {
+		"imageid": "kubernetes-cluster-running:1.18"
+	}
+}
