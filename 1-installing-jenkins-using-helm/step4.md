@@ -1,3 +1,9 @@
+`helm list` displays the applications installed using Helm.
+
+Run helm list again to see the deployed application:
+
+`helm list --all-namespaces`{{execute}}
+
 Now, lets upgrade to the version `3.4.1` with the same parameters (you can also execute `--dry-run` to test and `helm show values` to see new options):
 
 `helm upgrade jenkins jenkins/jenkins -n jenkins --version 3.4.1 -f values.yaml`{{execute}}
