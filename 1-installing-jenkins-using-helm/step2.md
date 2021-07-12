@@ -26,6 +26,8 @@ An easier way to see all the **default** options, is to save them in a file.
 
 You can see the `values.yaml` in VSCode as it is saved in the top level of the local environment. Scroll to the bottom of all files.
 
-Now that you have seen which values can be used to customize the installation, what command you think you will you use to install the application? Use `helm -h`{{execute}} and analyze different options. Click *Continue* to see the correct answer.
+Now that you have seen which values can be used to customize the installation, what command you think you will you use to deploy the application? Use `helm -h`{{execute}} and analyze different options. 
+
+Click *Continue* to see the correct answer.
 
 
