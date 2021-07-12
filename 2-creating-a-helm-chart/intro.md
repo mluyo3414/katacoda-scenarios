@@ -1,10 +1,10 @@
-## Overview
+## Scenario Overview
 
 
-In this tutorial, we will learn how to create a Helm chart to maintain an example application - https://github.com/mluyo3414/hello-kubernetes (credit to paulbouwer who created it). 
+In this tutorial, we will learn how to create a new Helm chart to maintain an example application - https://github.com/mluyo3414/hello-kubernetes (credit to paulbouwer who created it). 
 
 
-## Technologies review
+## Technologies review 
 
 
 * [Kubernetes](https://kubernetes.io/), also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. 
