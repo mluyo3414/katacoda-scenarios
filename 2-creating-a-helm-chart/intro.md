@@ -25,6 +25,6 @@ In this tutorial, we will learn how to create a new Helm chart to maintain an ex
 
 At the end of this scenario, you should:
 
-1. Understand some of the basic components needed to deploy an application in Kubernetes.
-2. Learn how to create a basic Helm chart using those files.
-3. Learn how to add variables to a Helm chart.
+1. Know some of the basic resources needed to deploy an application in Kubernetes.
+2. Know how to create a basic Helm chart using the files belonging to those Kubernetes resources.
+3. Know how to add variables to a Helm chart.
