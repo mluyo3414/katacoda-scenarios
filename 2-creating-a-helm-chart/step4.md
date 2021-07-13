@@ -23,6 +23,8 @@ Notice how the chart version and app version match the `version` and `appVersion
 Check all the resources are deployed in Kubernetes (serviceaccount, deployment, service and pod - created by the deployment) using `kubectl`:
 `kubectl get all -l app.kubernetes.io/name=hello-kubernetes`{{execute}}
 
+All deployed resources for the app have the `hello-kubernetes` value for the `app.kubernetes.io/name` label. You can find the labels in the [YAML files](https://github.com/mluyo3414/hello-kubernetes/blob/main/deploy/resources/service.yaml#L6). Labels are used to group resources easily.
+
 Use `kubectl` to see the pods starting. Wait until the pods status is `Running`.
 `kubectl get pods`{{execute}}
 
