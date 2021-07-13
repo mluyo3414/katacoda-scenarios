@@ -1,4 +1,4 @@
-**Answer:** Running `helm status`{{execute}} can provide more information.
+**Answer:** Running `helm status hello-kubernetes`{{execute}} can provide more information.
 
 ### Defining variables for the application
 
