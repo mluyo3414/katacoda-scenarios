@@ -6,9 +6,7 @@ You can also see what the content of the local environment is on the VSCode wind
 
 ### Verify Helm is installed
 
-Start by verifying that the **Helm client** is installed.
-
-* The Helm client can be installed in [different ways](https://helm.sh/docs/intro/install/) but in this case it has been already installed in our environment.
+Start by verifying that the **Helm client** is installed. The Helm client can be installed in [different ways](https://helm.sh/docs/intro/install/) but in this case it has been already installed in our environment.
 
 `helm version --short`{{execute}}
 
