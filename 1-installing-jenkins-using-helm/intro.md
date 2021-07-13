@@ -19,12 +19,12 @@ Jenkins when deployed in Kubernetes is composed of different resources such as:
 
 ## Why using Helm?
 
-**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc that are configured using multiple YAML files ([deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)). One of Helm's primary objective is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environment, upgrade, etc). In our case, Jenkins k8s components (statefulSet and service) will be managed by Helm.** 
+**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc. These are configured using multiple YAML files ([i.e deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)). One of Helm's primary objective is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environments, upgrade, etc) and easier management. In our case, we will install Jenkins and its k8s components (statefulSet and service) will be managed by Helm.** 
 
 
 ## [Overall usage of Helm](https://helm.sh/docs/topics/architecture/)
 
-Helm is a tool for managing Kubernetes packages called **charts**. Helm can do the following:
+Helm manages applications using **charts** which is a bundle of information necessary to create an instance of a Kubernetes application. Helm can do the following:
 
 * Create new charts from scratch (next scenario)
 * Package charts into chart archive (tgz) files (next scenario)
@@ -32,11 +32,6 @@ Helm is a tool for managing Kubernetes packages called **charts**. Helm can do t
 * **Install and uninstall charts into an existing Kubernetes cluster (in this scenario)**
 * **Manage the release cycle of charts that have been installed with Helm (in this scenario)**
 
-For Helm, there are three important concepts:
-
-* The chart is a bundle of information necessary to create an instance of a Kubernetes application.
-* The config contains configuration information that can be merged into a packaged chart to create a releasable object.
-* A release is a running instance of a chart, combined with a specific config.
 
 ## Prerequisites
 
