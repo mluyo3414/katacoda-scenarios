@@ -51,7 +51,7 @@ Make sure you are inside the correct folder first and then upgrade:
 
 `helm upgrade hello-kubernetes . --values values.yaml`{{execute}}
 
-### Verifying new version in the application
+### Verify the new version in the application
 
 Check details of the deployment:
 
