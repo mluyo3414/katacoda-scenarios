@@ -13,7 +13,7 @@ persistence:
 
 There are two ways we can customize the installation of the Jenkins chart with this option. 
 
-1. One option is to pass different values in the command line:
+* One option is to pass different values in the command line:
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 --set persistence.enabled=false --dry-run | less`{{execute}}
 
@@ -31,7 +31,7 @@ The first `jenkins` after `helm install` is the name we are going to give to our
 
 `--dry-run` is to see the files we are going to create when we execute the command but not apply the changes yet.
 
-2. Another option is to pass the `values.yaml` file with the desired options (this is usually the preferred method as the file can be saved in version control). 
+* Another option is to pass the `values.yaml` file with the desired options (this is usually the preferred method as the file can be saved in version control). 
 
 Go to the `values.yaml` file we created in VSCode and delete everything. **Yes, delete everything and copy and paste the snippet below.** Helm will only change the persistent option to false and deploy all the rest of **default** options:
 
