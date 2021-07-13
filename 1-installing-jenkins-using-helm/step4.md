@@ -1,4 +1,4 @@
-Answer: `helm list` displays the applications installed using Helm.
+**Answer**: `helm list` displays the applications installed using Helm.
 
 
 ### List applications installed with Helm
