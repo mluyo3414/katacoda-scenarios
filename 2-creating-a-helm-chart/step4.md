@@ -18,7 +18,9 @@ Check details of the deployment:
 
 Notice how the chart version and app version match the `version` and `appVersion` defined in the `Chart.yaml` file. 
 
-Check all the resources are deployed in Kubernetes:
+### Verify application is deployed
+
+Check all the resources are deployed in Kubernetes (serviceaccount, deployment, service and pod - created by the deployment):
 `kubectl get all`{{execute}}
 
 Wait until the pods status is `Running`.
@@ -29,3 +31,7 @@ Expose the application to verify it is running:
 `kubectl port-forward $POD 8080:8080 --address 0.0.0.0`{{execute}}
 
 Click the `Display 8080` tab in the terminal window. Notice how the image version is `1.10`. Press `Control + C` to stop forwarding.
+
+### Question:
+
+**What other Helm command can we run to verify the application deployment and obtain more information?**
