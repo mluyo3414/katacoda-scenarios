@@ -9,9 +9,9 @@ In this tutorial, you will learn how to install a containerized version of [Jenk
 
 2. Helm is the Kubernetes native package manager. It allows to install and manage applications in Kubernetes without the need to manage and configure multiple resource files in YAML. 
 
-3. Finally, Jenkins (the application we will be installing) is a widely used automation tool that can leverage Kubernetes to deploy other containers (called [agents](https://www.jenkins.io/doc/book/using/using-agents/)) and run tasks in them (usually focused on building, testing and deploying other applications).
+3. Finally, Jenkins (the application we will be installing with Helm) is a widely used automation tool that can leverage Kubernetes to deploy other containers (called [agents](https://www.jenkins.io/doc/book/using/using-agents/)) and run tasks in them (usually focused on building, testing and deploying other applications).
 
-Jenkins when deployed in Kubernetes is composed of different resources such as:
+Jenkins when deployed in Kubernetes is composed of different parts (or resources) such as:
 
 **[StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)** - manages the deployment and scaling of a set of Pods (a pod is the smallest deployable unit of computing that you can create and manage in Kubernetes. A pod contains one or more containers).
 
@@ -19,18 +19,19 @@ Jenkins when deployed in Kubernetes is composed of different resources such as:
 
 ## Why do we need Helm?
 
-**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc. These are configured using multiple YAML files ([i.e deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)). One of Helm's primary objective is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environments, upgrade, etc) and easier management. In our case, we will install Jenkins and its k8s components (statefulSet and service) will be managed by Helm.** 
+**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc. These are configured using one or multiple YAML files ([i.e deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)).** 
+
+**One of Helm's primary objective is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environments, upgrade, rollback, etc) and easier management. In our case, we will install Jenkins and its k8s components (statefulSet and service) with Helm.** 
 
 
 ## [Overall usage of Helm](https://helm.sh/docs/topics/architecture/)
 
-Helm manages applications using **charts** which is a bundle of information necessary to create an instance of a Kubernetes application. Helm can do the following:
+Helm manages applications using **charts** which are bundles of information necessary to create an instance of a Kubernetes application. Helm can do the following:
 
-* Create new charts from scratch (next scenario)
-* Package charts into chart archive (tgz) files (next scenario)
+* Create new charts for applications from scratch (next scenario)
 * **Interact with chart repositories where charts are stored (in this scenario)**
 * **Install and uninstall charts into an existing Kubernetes cluster (in this scenario)**
-* **Manage the release cycle of charts that have been installed with Helm (in this scenario)**
+* **Manage the release cycle (upgrade/rollback) of charts  that have been installed with Helm (in this scenario)**
 
 
 ## Prerequisites
