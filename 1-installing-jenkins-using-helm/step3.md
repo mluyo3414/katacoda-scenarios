@@ -1,6 +1,4 @@
-The correct command to install an application is:
-
-`helm install `
+**Answer**: The correct command to install an application is `helm install`
 
 One of the available options to configure our chart is to set the **application storage** to **false**. In fact, this is needed since our ephemeral working environment does not offer a persistent volume and it will cause an error in our installation. In order to do that, we need to change the `persistent` option to `false`. You can locate this option  **in or around line 707** in `values.yaml`:
 
