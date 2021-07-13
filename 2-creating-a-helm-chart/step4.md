@@ -1,18 +1,18 @@
-**Answer:** you can use `helm template` to render the files.
+**Answer:** you can use `helm template` to render the files and see all the resources that Helm will create for us.
 
 Go to the `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}} directory and test that the chart can be rendered following `helm template [NAME] [FOLDER]`:
 
 `helm template hello-kubernetes . | less`{{execute}}
 
-You should see all the resources that Helm will create (the same as the resource files we copied into `/templates`). Press `q` to exit from the view.
+`hello-kubernetes` is the name we want to give the application, `.` indicates to use the local directory. You should see all the resources that Helm will create (the same as the resource files we copied into `/templates` - services, deployment and serviceAccount). Press `q` to exit from the view.
 
 ### Install the hello-kubernetes application
 
-Finally let's install our basic chart `helm install [NAME] [FOLDER]`:
+Finally let's install our basic chart for the `hello-kubernetes` application using `helm install [NAME] [FOLDER]`:
 
 `helm install hello-kubernetes .`{{execute}}
 
-Check details of the deployment:
+`hello-kubernetes` is the name we want to give the application so it can be tracked by Helm. Check details of the deployment:
 
 `helm list`{{execute}}
 
@@ -20,10 +20,10 @@ Notice how the chart version and app version match the `version` and `appVersion
 
 ### Verify application is deployed
 
-Check all the resources are deployed in Kubernetes (serviceaccount, deployment, service and pod - created by the deployment):
+Check all the resources are deployed in Kubernetes (serviceaccount, deployment, service and pod - created by the deployment) using `kubectl`:
 `kubectl get all`{{execute}}
 
-Wait until the pods status is `Running`.
+Use `kubectl` to see the pods starting. Wait until the pods status is `Running`.
 `kubectl get pods`{{execute}}
 
 Expose the application to verify it is running:
