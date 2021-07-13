@@ -14,6 +14,6 @@ Use `helm -h`{{execute}} to help you  get more information about any command use
 
 ### Question
 
-**How would you make sure that there are no other applications installed in any namespace?**
+**How would you list other applications installed with Helm in any namespace?**
 
 Click *Continue* to see the answer in the next step.
