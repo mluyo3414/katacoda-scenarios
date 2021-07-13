@@ -1,5 +1,5 @@
 
-**Answer**: You can use `helm list` to verify there are no other applications installed in any namespace:
+**Answer**: You can use `helm list` to see any applications installed in any namespace:
 
 `helm list --all-namespaces`{{execute}}
 
