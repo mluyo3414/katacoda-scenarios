@@ -9,13 +9,29 @@ persistence:
   enabled: true
 ```
 
+### Installation alternatives:
+
 There are two ways we can customize the installation of the Jenkins chart with this option. 
 
-One option is to pass different values in the command line (we are going to also execute the `--dry-run` as we are not installing yet):
+1. One option is to pass different values in the command line:
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 --set persistence.enabled=false --dry-run`{{execute}}
 
-Another option is to pass the `values.yaml` file with the desired options (this is usually the preferred method as the file can be saved in version control). Go to the `values.yaml` file we created in VSCode, delete everything the persistence options we want to change (**Yes, delete the rest** - Helm will only change the persistent option to false and deploy all the rest of **default** options):
+Let's analyze the command above:
+
+The first `jenkins` after `helm install` is the name we are going to give to our deployment.
+
+`jenkins/jenkins` are the name of the repo and the name of the chart we want to install from that repo. 
+
+`-n jenkins` is the namespace where we are going to install the application. 
+
+`--version` is the chart version. 
+
+`--set persistence.enabled=false` is the option we are setting for the chart.
+
+`--dry-run` is to see the files we are going to create when we execute the command but not apply the changes yet.
+
+2. Another option is to pass the `values.yaml` file with the desired options (this is usually the preferred method as the file can be saved in version control). Go to the `values.yaml` file we created in VSCode, delete everything the persistence options we want to change (**Yes, delete the rest** - Helm will only change the persistent option to false and deploy all the rest of **default** options):
 
 ```
 persistence:
@@ -28,17 +44,27 @@ Now let's run the command (still with `--dry-run` as we are not installing yet!)
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml --dry-run | less`{{execute}}
 
+
+### A trick for when you don't have Helm in all machines:
+
 **Did you notice how you were able to see all the resources that were going to be created in your Kubernetes cluster when you added the `--dry-run` command (pod, secret, ConfigMap, etc)?**
 
-An easier way to see the actual resources is to use `helm template`. This command can give you one file with all the resources needed to install the application. This is useful in cases where the Helm client is no available in the machine that is connected to your Kubernetes cluster and you can just run `kubectl apply -f $file_created_by_helm_template` :
+An easier way to see the actual resources is to use `helm template`. This command can give you one file with all the resources needed to install the application. 
 
 `helm template jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml --dry-run > resources.yaml`{{execute}}
 
-Take a look at the `resources.yaml` file in VSCode and see all the resources that Helm will install for you.
+Take a look at the `resources.yaml` file in VSCode and see all the resources that Helm will install for you. This is useful in cases where the Helm client is no available in the machine that is connected to your Kubernetes cluster and you can just install the application by using `kubectl apply -f resources.yaml`.
 
-Now let's install Jenkins with the `values.yaml` file:
+
+### Going back to our installation with values file:
+
+In our case, we don't need helm template as we have Helm access so let's install Jenkins with the `values.yaml` file:
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml`{{execute}}
+
+
+### Verifying application is running:
+
 
 Also, you can see if the pod is running:
 
@@ -49,6 +75,8 @@ Press `Control+C` to exit once the pod `Status` is `Running`. It should take a f
 You can see the status and useful information about the Helm deployment (the same message that you just when you executed `helm install ...`) by running:
 
 `helm status jenkins -n jenkins`{{execute}}
+
+### Accesing application:
 
 Copy the command to get your console password (Step 1 in the Helm status message):
 
@@ -66,6 +94,8 @@ Login with the user **admin** and the password you retrieved. Notice in the bott
 
 Go back to the terminal window and press `Control+C` to stop forwarding. 
 
-What command do you think you can use to see all the applications installed using Helm?
+**Question:**
+
+**What command do you think you can use to see all the applications installed using Helm (try looking at `helm -h`)?**
 
 Click on `Continue` to see the correct answer.
