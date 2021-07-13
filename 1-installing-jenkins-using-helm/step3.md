@@ -15,7 +15,7 @@ There are two ways we can customize the installation of the Jenkins chart with t
 
 1. One option is to pass different values in the command line:
 
-`helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 --set persistence.enabled=false --dry-run`{{execute}}
+`helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 --set persistence.enabled=false --dry-run | less`{{execute}}
 
 Let's analyze the command above:
 
