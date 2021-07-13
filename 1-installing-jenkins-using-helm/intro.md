@@ -28,10 +28,10 @@ Jenkins when deployed in Kubernetes is composed of different parts (or resources
 
 Helm manages applications using **charts** which are bundles of information necessary to create an instance of a Kubernetes application. Helm can do the following:
 
-* Create new charts for applications from scratch (next scenario)
-* **Interact with chart repositories where charts are stored (in this scenario)**
-* **Install and uninstall charts into an existing Kubernetes cluster (in this scenario)**
-* **Manage the release cycle (upgrade/rollback) of charts  that have been installed with Helm (in this scenario)**
+* **Interact with chart repositories where charts are stored (in this scenario - Part 1)**
+* **Install and uninstall charts into an existing Kubernetes cluster (in this scenario - Part 1)**
+* **Manage the release cycle (upgrade/rollback) of charts  that have been installed with Helm (in this scenario - Part 1)**
+* Create new charts for applications from scratch (next scenario - Part 2)
 
 
 ## Prerequisites
