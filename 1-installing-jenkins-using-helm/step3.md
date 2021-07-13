@@ -21,7 +21,7 @@ Let's analyze the command above:
 
 The first `jenkins` after `helm install` is the name we are going to give to our deployment.
 
-`jenkins/jenkins` are the name of the repo and the name of the chart we want to install from that repo. 
+`jenkins/jenkins` is the name of the repo and the name of the chart we want to install from that repo. 
 
 `-n jenkins` is the namespace where we are going to install the application. 
 
