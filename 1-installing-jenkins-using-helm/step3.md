@@ -51,7 +51,7 @@ Now let's use a similar command to the first option that allows us to pass a fil
 
 **Did you notice how you were able to see all the resources that were going to be created in Kubernetes when you added the `--dry-run` command (pod, secret, ConfigMap, etc)?**
 
-An easier way to see the actual resources is to use `helm template`. This command can give you one file (i.e `resources.yaml`) with all the components needed to install the application. 
+An easier way to see the actual resources as if you were using YAML is to use `helm template`. This command can give you one file (i.e `resources.yaml`) with all the components needed to install the application. 
 
 `helm template jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml > resources.yaml`{{execute}}
 
