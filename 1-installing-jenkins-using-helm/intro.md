@@ -21,7 +21,7 @@ Jenkins when deployed in Kubernetes is composed of different parts (or resources
 
 **Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc. These are configured using one or multiple YAML files ([i.e deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)).** 
 
-**One of Helm's primary objective is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environments, upgrade, rollback, etc) and easier management. In our case, we will install Jenkins and its k8s components (statefulSet and service) with Helm.** 
+**Managing applications using YAML files can be complicated, that is why one of Helm's primary objective is to provide a level of abstraction on top of these resources to facilitate the application lifecycle (installation, deployment in multiple environments, upgrade, rollback, etc). In our case, we will manage Jenkins and its k8s components (statefulSet and service) with Helm.** 
 
 
 ## [Overall usage of Helm](https://helm.sh/docs/topics/architecture/)
