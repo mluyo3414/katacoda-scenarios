@@ -66,7 +66,7 @@ In our case, we don't need `helm template` as we have Helm access so let's insta
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml`{{execute}}
 
-Take a look at the information provided after running this command (in this case it contains the password for the UI). This information is also available running:
+Take a look at the information provided after running this command (in this case it contains the command to get the password for the UI). This information is also available running:
 
 `helm status jenkins -n jenkins`{{execute}}
 
