@@ -11,7 +11,7 @@ In this part, you will learn how to install a containerized version of [Jenkins]
 
 3. Finally, Jenkins (the application we will be installing with Helm) is a widely used automation tool that can leverage Kubernetes to deploy other containers (called [agents](https://www.jenkins.io/doc/book/using/using-agents/)) and run tasks in them (usually focused on building, testing and deploying other applications).
 
-Jenkins when deployed in Kubernetes is composed of different parts (or resources) such as:
+Jenkins when deployed in Kubernetes is composed of different parts (or resources). To name a few:
 
 **[StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)** - manages the deployment and scaling of a set of Pods (a pod is the smallest deployable unit of computing that you can create and manage in Kubernetes. A pod contains one or more containers).
 
@@ -19,7 +19,7 @@ Jenkins when deployed in Kubernetes is composed of different parts (or resources
 
 ## Why do we need Helm?
 
-**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc. These are configured using one or multiple YAML files ([i.e deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)).** 
+**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, roles, roleBindings etc. These are configured using one or multiple YAML files ([i.e deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)).** 
 
 **Managing applications using YAML files can be complicated, that is why one of Helm's primary objectives is to provide a level of abstraction on top of these resources to facilitate the application lifecycle (installation, deployment in multiple environments, upgrade, rollback, etc). In our case, we will manage Jenkins and its k8s components (statefulSet and service) with Helm.** 
 
