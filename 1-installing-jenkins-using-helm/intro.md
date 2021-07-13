@@ -17,7 +17,7 @@ Jenkins when deployed in Kubernetes is composed of different resources such as:
 
 **[Service](https://kubernetes.io/docs/concepts/services-networking/service/)** - An abstract way to expose an application running on a set of Pods as a network service. This will allows us to access Jenkins.
 
-## Why using Helm?
+## Why do we need Helm?
 
 **Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc. These are configured using multiple YAML files ([i.e deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)). One of Helm's primary objective is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environments, upgrade, etc) and easier management. In our case, we will install Jenkins and its k8s components (statefulSet and service) will be managed by Helm.** 
 
