@@ -1,14 +1,15 @@
 
-You can use `helm list` to verify there are no other applications installed in any namespace:
+**Answer**: You can use `helm list` to verify there are no other applications installed in any namespace:
 
 `helm list --all-namespaces`{{execute}}
 
+### Understanding the Hello-Kubernetes Application
 
 Now, let's start by cloning the application:
 
 `git clone https://github.com/mluyo3414/hello-kubernetes.git`{{execute}}
 
-Now you can see the application in the top folder of the VSCode window on the top right. The application code and `Dockerfile` are located under `/src/app`.
+You can see the application in the top folder of the VSCode window on the top right. The application code and `Dockerfile` are located under `/src/app`.
 
 There are **four** files that represent the resources needed to deploy the application in Kubernetes. They are located under **`hello-kubernetes/deploy/resources`** (**`all-resources.yaml`** is a single file that includes all resources):
 
@@ -19,6 +20,8 @@ There are **four** files that represent the resources needed to deploy the appli
 * `service.yaml` : An abstract way to expose an application running on a set of Pods as a network service.
 
 * `all-resources.yaml` : an example about how to have all the files togeher in a single file so the application can be installed with `kubectl apply -f resources.yaml`
+
+### Creating the hello-kubernetes chart
 
 Now, let's make a directory inside the `resources` folder to create the [Helm chart](https://helm.sh/docs/topics/charts/) and package the application:
 
@@ -36,8 +39,9 @@ Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` und
 
 * **`templates/`**: All Kubernetes YAML files we would like to include in the Chart.
 
+### Question:
 
-Which files do you think you need to include under `templates/` folder to create a chart for the `hello-kubernetes` application?
+**Which files do you think you need to include under `templates/` folder to create a chart for the `hello-kubernetes` application?**
 
 Click *Continue* to see the response in the next screen.
 
