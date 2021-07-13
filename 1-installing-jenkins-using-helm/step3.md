@@ -1,6 +1,6 @@
 **Answer**: The correct command to install an application is `helm install`
 
-One of the available options to configure our chart is to set the **application storage** to **false**. In fact, this is needed since our ephemeral working environment in Katacoda does not offer a persistent volume (used to save state in case the pod needs to be restarted) and it will cause an error in our installation. 
+One of the available options to configure our chart is to set the **application storage** to **false**. In fact, this is needed since our ephemeral working environment in Katacoda does not offer a persistent volume (used to save state in case the pod needs to be restarted) and it will cause an error in our installation if we try to add one. 
 
 In order to do that, we need to change the `persistent` option to `false`. You can locate this option  **in or around line 707** in `values.yaml`:
 
