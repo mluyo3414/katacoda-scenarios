@@ -8,6 +8,7 @@ We also update to get the latest chart information.
 
 `helm repo update`{{execute}}
 
+### Finding different versions of the Jenkins Chart 
 
 **Note: The `| less` option was added to most commands so you can scroll through the terminal. Exit that view mode by pressing `q`.**
 
@@ -25,9 +26,7 @@ Before we run any other command, let's create a [namespace](https://kubernetes.i
 
 `kubectl create ns jenkins`{{execute}}
 
-### Customizing the installation of a Chart
-
-Helm gives us the option to customize the installation with different settings.
+### How can you customize a chart installation?
 
 Let's find which values the Jenkins Chart allows us to modify (the options shown are the **default** chart options). These options allows us to customize our installation (i.e which image to use for the controller, how much RAM/CPU the pod should use, etc). 
 
