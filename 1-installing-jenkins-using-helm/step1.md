@@ -1,3 +1,4 @@
+
 ### Waiting for local environment
 
 Before we start, wait until Kubernetes has finished installing in the terminal window in the bottom right. 
