@@ -9,7 +9,7 @@ Now, let's start by cloning the application:
 
 `git clone https://github.com/mluyo3414/hello-kubernetes.git`{{execute}}
 
-You can see the application in the top folder of the VSCode window on the top right. The application code and `Dockerfile` are located under `/src/app`.
+You can see the application in the VSCode window on the top right under `hello-kubernetes`. The application code and `Dockerfile` are located under `hello-kubernetes/src/app`.
 
 There are **four** files that represent the resources needed to deploy the application in Kubernetes. They are located under **`hello-kubernetes/deploy/resources`** (**`all-resources.yaml`** is a single file that includes all resources):
 
@@ -17,9 +17,11 @@ There are **four** files that represent the resources needed to deploy the appli
 
 * `deployment.yaml` : A Deployment provides declarative updates for [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) and [ReplicaSets](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/).
 
-* `service.yaml` : An abstract way to expose an application running on a set of Pods as a network service.
+* `service.yaml` : An abstract way to expose an application running on a set of Pods as a network service. 
 
 * `all-resources.yaml` : an example about how to have all the files togeher in a single file so the application can be installed with `kubectl apply -f resources.yaml`
+
+Look for more information about these common resources in the [K8s documentation](https://kubernetes.io/docs/home/).
 
 ### Creating the hello-kubernetes chart
 
@@ -31,7 +33,8 @@ Create the `hello-kubernetes` chart:
 
 `helm create hello-kubernetes`{{execute}}
 
-Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` under `hello-kubernetes`. [This link](https://helm.sh/docs/topics/charts/#the-chart-file-structure) contains all the information about what each file. The most important files/directories are:
+This command creates a chart directory along with the common files and
+directories used in a chart. More info in `helm create -h`{{execute}} Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` under `hello-kubernetes`. [This link](https://helm.sh/docs/topics/charts/#the-chart-file-structure) contains all the information about what each file does. The most important files/directories are:
 
 * **`Chart.yaml`**: Chart name, description, version and information about the chart.
 
