@@ -4,7 +4,7 @@ Now, let's explore the [Jenkins Helm Chart](https://github.com/jenkinsci/helm-ch
 
 `helm repo update`{{execute}}
 
-Before we run any other command, let's create a namespace to deploy Jenkins:
+Before we run any other command, let's create a [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces) to deploy Jenkins:
 
 `kubectl create ns jenkins`{{execute}}
 
@@ -14,19 +14,21 @@ We can check the available versions by running:
 
 `helm search repo jenkins/jenkins --versions | less`{{execute}}
 
-Notice there are two versions, one is the Helm chart `3.3.21` version and the other one is the application version itself `2.277.4`. In this case, we are going to install the chart version `3.3.21`. Helm gives us the option to customize the installation with different settings.
+Notice there are two versions, one is the Helm chart i.e `3.3.21` version and the other one is the application version itself i.e `2.277.4`. In this case, we are going to install the chart version `3.3.21`. Helm gives us the option to customize the installation with different settings.
 
-Let's find which values the Jenkins Chart allows us to modify (the options shown are the **default** chart options).
+Let's find which values the Jenkins Chart allows us to modify (the options shown are the **default** chart options). These options allows us to customize our installation (i.e which image to use for the controller, how much RAM/CPU the pod should use, etc). 
 
 `helm show values jenkins/jenkins --version 3.3.21 | less`{{execute}}
 
-An easier way to see all the **default** options, is to save them in a file.
+An easier way to see all the **default** options, is to save them in a file. 
 
 `helm show values jenkins/jenkins --version 3.3.21 > values.yaml`{{execute}}
 
-You can see the `values.yaml` in VSCode as it is saved in the top level of the local environment. Scroll to the bottom of all files.
+You can see the `values.yaml` in VSCode as it is saved in the top level of the local environment. Scroll to the bottom of all files. Feel free to read all the available options in the `values.yaml` file.
 
-Now that you have seen which values can be used to customize the installation, what command you think you will you use to deploy the application? Use `helm -h`{{execute}} and analyze different options. 
+**Question:**
+
+**Now that you have seen which values can be used to customize the installation, what command you think you will you use to deploy the application? Use `helm -h`{{execute}} and analyze different options.** 
 
 Click *Continue* to see the correct answer.
 
