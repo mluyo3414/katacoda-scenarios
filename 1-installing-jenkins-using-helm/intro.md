@@ -7,19 +7,19 @@ In this tutorial, you will learn how to install a containerized version of [Jenk
 
 1. Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. Learn more about Kubernetes and its advantages in [this link](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/).
 
-2. Helm is the Kubernetes native package manager, it allows to install and manage applications in Kubernetes without the need to manage and configure multiple resource files . 
+2. Helm is the Kubernetes native package manager, it allows to install and manage applications in Kubernetes without the need to manage and configure multiple resource files in YAML. 
 
 3. Finally, Jenkins (the application we will be installing) is a widely used automation tool that can leverage Kubernetes to deploy other containers (called [agents](https://www.jenkins.io/doc/book/using/using-agents/)) and run tasks in them (usually focused on building, testing and deploying other applications).
 
-Jenkins is composed of Kubernetes resources such as:
+Jenkins when deployed in Kubernetes is composed of different resources such as:
 
-**[StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)** - manages the deployment and scaling of a set of Pods(smallest deployable units of computing that you can create and manage in Kubernetes, a pod contains one or more containers).
+**[StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/)** - manages the deployment and scaling of a set of Pods (a pod is the smallest deployable unit of computing that you can create and manage in Kubernetes. A pod contains one or more containers).
 
 **[Service](https://kubernetes.io/docs/concepts/services-networking/service/)** - An abstract way to expose an application running on a set of Pods as a network service. This will allows us to access Jenkins.
 
 ## Why using Helm?
 
-**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc that are configured using multiple YAML files ([deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)). One of Helm's intent is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environment, upgrade, etc). In our case, Jenkins k8s components (statefulSet and service) will be managed by Helm.** 
+**Usually applications in K8s are composed of deployments, services, secrets, persistent volumes, etc that are configured using multiple YAML files ([deploying mySQL without Helm](https://kubernetes.io/docs/tasks/run-application/run-single-instance-stateful-application/)). One of Helm's primary objective is to provide a level of abstraction on top of these resources to facilitate application management (installation, deployment in multiple environment, upgrade, etc). In our case, Jenkins k8s components (statefulSet and service) will be managed by Helm.** 
 
 
 ## [Overall usage of Helm](https://helm.sh/docs/topics/architecture/)
@@ -40,7 +40,7 @@ For Helm, there are three important concepts:
 
 ## Prerequisites
 
-1. Familiarity with the terminal and have some previous experience with containers.
+1. Familiarity with the terminal and have some previous experience/knowledge with containers.
 
 ## Learning Objectives
 
