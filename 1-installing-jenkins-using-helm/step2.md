@@ -1,4 +1,6 @@
-Now, let's explore the [Jenkins Helm Chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins). First, we need to follow the documentation and add the public repository to be able to pull the chart. We also update to get the latest chart information. 
+Now, let's explore the [Jenkins Helm Chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins). First, we need to follow the documentation and add the public repository to be able to pull the chart using `helm repo add`. We will name it `jenkins` and provide the URL with the public location of such repo `https://charts.jenkins.io`.
+
+We also update to get the latest chart information. 
 
 `helm repo add jenkins https://charts.jenkins.io`{{execute}}
 
