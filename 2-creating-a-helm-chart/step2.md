@@ -3,6 +3,8 @@
 
 `helm list --all-namespaces`{{execute}}
 
+We have no applications yet.
+
 ### Understanding the Hello-Kubernetes Application
 
 Now, let's start by cloning the application:
@@ -34,7 +36,9 @@ Create the `hello-kubernetes` chart:
 `helm create hello-kubernetes`{{execute}}
 
 This command creates a chart directory along with the common files and
-directories used in a chart. More info in `helm create -h`{{execute}} Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` under `hello-kubernetes`. [This link](https://helm.sh/docs/topics/charts/#the-chart-file-structure) contains all the information about what each file does. The most important files/directories are:
+directories used in a chart. More info in `helm create -h`{{execute}}.
+
+Helm has now created a Chart inside `hello-kubernetes/deploy/resources/helm` under `hello-kubernetes`. [This link](https://helm.sh/docs/topics/charts/#the-chart-file-structure) contains all the information about what each file does. The most important files/directories are:
 
 * **`Chart.yaml`**: Chart name, description, version and information about the chart.
 
