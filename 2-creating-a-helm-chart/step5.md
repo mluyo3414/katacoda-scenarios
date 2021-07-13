@@ -1,16 +1,24 @@
-Let's insert some variables in our chart to make it easier to deploy it in different environments. We will start by changing the image version to `1.11`.
+**Answer:** Running `helm status`{{execute}} can provide more information.
 
-* Go to the Chart.yaml and change the appVersion to `1.11`
+### Defining variables for the application
+
+As we mentioned before in both tutorials, Helm provides the option to add different options to configure the installation of an application. Let's define which variables can be set in our `hello-kubernetes` chart to make it easier to deploy it in different environments or share it with other users (we are going to define the variables we can pass values for using `--set` or `-f values.yaml`). 
+
+In this case, we will convert the Docker image value for our application to a variable so we can select which application image we want to install.
+
+Our goal is to now upgrade from the image tagged `1.10` to the `1.11-dev`
+
+* First, go to the `Chart.yaml` and change the `appVersion` to `1.11`. This is not a variable but it is the value shown when we use `helm list` and since we are going to be upgrading the image in the   `deployment` it is recommended to upgrade this field as well.
 
 * Go to `values.yaml`, **delete everything** and insert:
 
 ```
 deployment:
   image: "mluyo3414/hello-kubernetes"
-  tag: "1.11"
+  tag: "1.11-dev"
 ```{{copy}}
 
-* Go to the `image` section (around line 23) in the `deployment.yaml` from:
+* Now let's use templating to create a variable. Go to the `image` section (around line 23) in the `deployment.yaml` and change:
 
 ```
 image: "mluyo3414/hello-kubernetes:1.10"
@@ -22,7 +30,7 @@ to:
 image: {{  .Values.deployment.image  }}:{{  .Values.deployment.tag  }}
 ```{{copy}}
 
-* Also, go to the `value` section under CONTAINER_IMAGE (around line 51) in the `deployment.yaml` from:
+* Also, go to the `value` section under CONTAINER_IMAGE (around line 51) in the `deployment.yaml` and change from:
 
 ```
 value: "mluyo3414/hello-kubernetes:1.10"
@@ -34,7 +42,7 @@ to:
 value: {{  .Values.deployment.image  }}:{{  .Values.deployment.tag  }}
 ```{{copy}}
 
-Helm uses Go templating to insert variables. Let's upgrade our already installed application to the new version `1.11` (make sure you are inside the correct folder `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}}):
+Helm uses Go templating to insert variables. Let's upgrade our already installed application to the new version `1.11-dev` (make sure you are inside the correct folder `cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}}):
 
 `helm upgrade hello-kubernetes . --values values.yaml`{{execute}}
 
@@ -49,7 +57,7 @@ Expose the application to verify it is running:
 `POD=$(kubectl get pod -o jsonpath="{.items[0].metadata.name}")`{{execute}}
 `kubectl port-forward $POD 8080:8080 --address 0.0.0.0`{{execute}}
 
-Click the `Display 8080` tab in the terminal window. Notice how the image version is `1.11`. Press `Control + C` to stop forwarding.
+Click the `Display 8080` tab in the terminal window. Notice how the image version is `1.11-dev`. Press `Control + C` to stop forwarding.
 
 
 You can run kubectl get all -n jenkins{{execute}} and see all the Kubernetes resources deployed by Helm. 
