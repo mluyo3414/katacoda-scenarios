@@ -66,9 +66,9 @@ You should now see `REVISION:2`
 
 Check all the application resources are deployed in Kubernetes and make sure the corresponding pods are `Running`:
 
-`kubectl get all -l name=hello-kubernetes`{{execute}}
+`kubectl get all -l app.kubernetes.io/name=hello-kubernetes`{{execute}}
 
-All deployed resources for the app have the `hello-kubernetes` value for the `name` label. You can find the labels in the [YAML files](https://github.com/mluyo3414/hello-kubernetes/blob/main/deploy/resources/service.yaml#L6). Labels are used to group resources easily.
+All deployed resources for the app have the `hello-kubernetes` value for the `app.kubernetes.io/name` label. You can find the labels in the [YAML files](https://github.com/mluyo3414/hello-kubernetes/blob/main/deploy/resources/service.yaml#L6). Labels are used to group resources easily.
 
 Get the pod name and expose the application to verify it is running:
 
