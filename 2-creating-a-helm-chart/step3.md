@@ -42,8 +42,6 @@ This is how the final configuration under `/root/hello-kubernetes/deploy/resourc
 You can verify the folder structure by running:
 `tree /root/hello-kubernetes/deploy/resources/`{{execute}}
 
-* Inspect the `Chart.yaml` file. Notice how there is a `version` for the chart version and a `appVersion` for the application version itself.
-
 ### Question:
 **Which command do we have to use to see all the files/K8s resources that our Helm Chart will create?**
 
