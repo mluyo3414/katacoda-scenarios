@@ -21,7 +21,7 @@ Notice how the chart version and app version match the `version` and `appVersion
 ### Verify application is deployed
 
 Check all the resources are deployed in Kubernetes (serviceaccount, deployment, service and pod - created by the deployment) using `kubectl`:
-`kubectl get all`{{execute}}
+`kubectl get all -l app.kubernetes.io/name=hello-kubernetes`{{execute}}
 
 Use `kubectl` to see the pods starting. Wait until the pods status is `Running`.
 `kubectl get pods`{{execute}}
