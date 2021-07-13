@@ -1,6 +1,9 @@
+
 ### Adding a Chart to our local environment 
 
-Now, let's explore the [Jenkins Helm Chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins). First, we need to follow the documentation and add the public repository to be able to pull the chart using `helm repo add`. We will name it `jenkins` and provide the URL with the public location of such repo `https://charts.jenkins.io`.
+As we mentioned before, a chart is a set of files ( compressed `tgz`) needed to deploy the application in Kubernetes. We are going to need to download it to our local environment so that it can be installed in K8s. 
+
+Let's explore the [Jenkins Helm Chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins). First, we need to follow the documentation and add the public repository to be able to pull the chart using `helm repo add`. We will name our local repository `jenkins` and provide the URL with the public location of the repo `https://charts.jenkins.io`.
 
 We also update to get the latest chart information. 
 
@@ -12,15 +15,15 @@ We also update to get the latest chart information.
 
 **Note: The `| less` option was added to most commands so you can scroll through the terminal. Exit that view mode by pressing `q`.**
 
-We can search for the available versions by running: 
+Inside that repo (which we named `jenkins`), we will search for the `jenkins` chart (hence `jenkins/jenkins` - `repo/chart`). We can search for the available chart versions by running: 
 
 `helm search repo jenkins/jenkins --versions | less`{{execute}}
 
-`jenkins/jenkins` is the name of the repo and the name of the jenkins chart. 
+Again, `jenkins/jenkins` is the name of the repo and the name of the chart. 
 
 `--version` will provide us all the available versions. 
 
-Notice there are two versions in each line, one is the Helm chart (i.e `3.3.21`) version and the other one is the application version itself (i.e `2.277.4`). In this case, we are going to install the chart version `3.3.21`. 
+Notice there are two versions in each line, one is the Helm chart version (i.e `3.3.21`) and the other one is the application version itself (i.e `2.277.4`). In this case, we are going to install the chart version `3.3.21`. 
 
 Before we run any other command, let's create a [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces) in Kubernetes to deploy Jenkins:
 
@@ -28,7 +31,7 @@ Before we run any other command, let's create a [namespace](https://kubernetes.i
 
 ### How can you customize a chart installation?
 
-Let's find which values the Jenkins Chart allows us to modify (the options shown are the **default** chart options). These options allows us to customize our installation (i.e which image to use for the controller, how much RAM/CPU the pod should use, etc). 
+Let's find which values the Jenkins Chart allows us to modify (the options shown with the below commands are the **default** chart options). These options allow us to customize our installation (i.e which Docker image to use for the controller, how much RAM/CPU the pod should use, etc). 
 
 `helm show values jenkins/jenkins --version 3.3.21 | less`{{execute}}
 
@@ -40,7 +43,9 @@ You can see the `values.yaml` in VSCode as it is saved in the top level of the l
 
 ### Question:
 
-**Now that you have seen which values can be used to customize the installation, what command you think you will you use to deploy the application? Use `helm -h`{{execute}} and analyze different options.** 
+**Now that you have seen which values can be used to customize the installation, what command you think you will you use to deploy the application?** 
+
+Use `helm -h`{{execute}} and search for different options. 
 
 Click *Continue* to see the correct answer.
 
