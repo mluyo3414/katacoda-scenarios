@@ -7,7 +7,7 @@ In this tutorial, you will learn how to install a containerized version of [Jenk
 
 1. Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. Learn more about Kubernetes and its advantages in [this link](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/).
 
-2. Helm is the Kubernetes native package manager, it allows to install and manage applications in Kubernetes without the need to manage and configure multiple resource files in YAML. 
+2. Helm is the Kubernetes native package manager. It allows to install and manage applications in Kubernetes without the need to manage and configure multiple resource files in YAML. 
 
 3. Finally, Jenkins (the application we will be installing) is a widely used automation tool that can leverage Kubernetes to deploy other containers (called [agents](https://www.jenkins.io/doc/book/using/using-agents/)) and run tasks in them (usually focused on building, testing and deploying other applications).
 
