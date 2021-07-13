@@ -8,4 +8,4 @@ Start by verifying that the **Helm client** is installed.
 
 `helm version --short`{{execute}}
 
-Use `helm -h` to help you  get more information about any command used through this tutorial.
+Use `helm -h`{{execute}} to help you  get more information about any command used through this tutorial.
