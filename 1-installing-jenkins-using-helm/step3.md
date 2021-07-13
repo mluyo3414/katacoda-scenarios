@@ -60,7 +60,7 @@ Take a look at the `resources.yaml` file in VSCode and see all the resources tha
 You can install Helm in any a development machine, use `helm template` to create a single file with all the resources for the application and install it by just using `kubectl apply -f resources.yaml`.
 
 
-### Going back to our installation with values file:
+### Going back to our installation with `values.yaml` file:
 
 In our case, we don't need `helm template` as we have Helm access so let's install Jenkins with the `values.yaml` file:
 
@@ -76,7 +76,7 @@ See if the Jenkins pod is running:
 
 `kubectl get pods -n jenkins -w`{{execute}} (`-w` to follow but it is optional)
 
-Press `Control+C` to exit once the pod `Status` is `Running`. It should take a few minutes. 
+Press `Control+C` to exit once the pod `Status` is `Running`. It should take a few minutes. Taking too long? Debug with `kubectl describe pods -n jenkins` and look at the messages at the bottom. Sometimes it takes a bit to download the image.
 
 
 ### Accesing the Jenkins UI:
