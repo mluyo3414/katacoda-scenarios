@@ -1,6 +1,6 @@
 **Answer:** Running `helm status hello-kubernetes`{{execute}} can provide more information.
 
-### Defining variables for the application
+### Defining new variables for the application
 
 As we mentioned before in both tutorials, Helm provides the option to add different options to configure the installation of an application. 
 
@@ -10,7 +10,9 @@ Let's define which variables can be set in our `hello-kubernetes` chart to make 
 
 Our goal is to now upgrade from the image tagged `1.10` to the `1.11-dev`
 
-* First, go to the `Chart.yaml` and change the `appVersion` to `1.11`. This is not a variable but it is the value shown when we use `helm list` and since we are going to be upgrading the image in the   `deployment` it is recommended to upgrade this chart field as well.
+* First, go to the `Chart.yaml` and change the `appVersion` to `1.11`. This is not a variable and not mandatory to change but it is the value shown when we use `helm list`. Since we are going to be upgrading the image in the  `deployment` it is recommended to upgrade the app version field as well.
+
+Now let's replace the hardcoded values for variables.
 
 * Go to `values.yaml`, **delete everything** and insert:
 
@@ -44,10 +46,15 @@ to:
 value: {{  .Values.deployment.image  }}:{{  .Values.deployment.tag  }}
 ```{{copy}}
 
-Helm uses Go templating to insert variables. Let's upgrade our already installed application to the new version `1.11-dev` 
+Helm uses Go templating to insert variables. 
+
+### Using the Chart variable
+
+
+Let's upgrade our already installed application to the new version `1.11-dev` using our new variable.
 
 Make sure you are inside the correct folder first and then upgrade:
-`cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}}):
+`cd /root/hello-kubernetes/deploy/resources/helm/hello-kubernetes/`{{execute}}:
 
 `helm upgrade hello-kubernetes . --values values.yaml`{{execute}}
 
