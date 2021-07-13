@@ -42,7 +42,7 @@ persistence:
 
 ![Helm Logo](./../assets/values.png)
 
-Now let's run a similar command to option 1 that allows us to pass a file using the flag `-f` instead of `--set` (still with `--dry-run` as we are not installing yet!):
+Now let's use a similar command to the first option that allows us to pass a file using the flag `-f` instead of `--set` (still with `--dry-run` as we are not installing yet and we just want to verify!):
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml --dry-run | less`{{execute}}
 
