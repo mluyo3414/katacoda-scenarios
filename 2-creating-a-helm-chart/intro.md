@@ -1,7 +1,7 @@
 ## Scenario Overview
 
 
-In this tutorial, we will learn how to create a new Helm chart to maintain an example application - https://github.com/mluyo3414/hello-kubernetes (credit to paulbouwer who created it). This is a continuation of [Helm tutorial part 1: Learning Helm by installing Jenkins](https://katacoda.com/msuarez/scenarios/1-installing-jenkins-using-helm).
+In this part, we will learn how to create a new Helm chart to maintain an example web application - https://github.com/mluyo3414/hello-kubernetes (credit to paulbouwer who created it). This is a continuation of [Helm tutorial part 1: Learning Helm by installing Jenkins](https://katacoda.com/msuarez/scenarios/1-installing-jenkins-using-helm).
 
 
 ## Technologies review 
