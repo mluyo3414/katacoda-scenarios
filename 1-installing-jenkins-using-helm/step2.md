@@ -43,7 +43,7 @@ You can see the `values.yaml` in VSCode as it is saved in the top level of the l
 
 ### Question:
 
-**Now that you have seen which values can be used to customize the installation, what command you think you will you use to deploy the application?** 
+**Now that you have seen which values can be used to customize the installation, what command you think you will use to deploy the application?** 
 
 Use `helm -h`{{execute}} and search for different options. 
 
