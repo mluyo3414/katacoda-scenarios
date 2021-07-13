@@ -55,7 +55,9 @@ An easier way to see the actual resources as if you were using YAML is to use `h
 
 `helm template jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml > resources.yaml`{{execute}}
 
-Take a look at the `resources.yaml` file in VSCode and see all the resources that Helm will install for you. This is useful in cases where the Helm client is no available in the machine that has access your Kubernetes cluster. You can install Helm in any a development machine, use `helm template` to create a single file with all the resources for the application and install it by just using `kubectl apply -f resources.yaml`.
+Take a look at the `resources.yaml` file in VSCode and see all the resources that Helm will install for you. This is useful in cases where the Helm client is no available in the machine that has access your Kubernetes cluster. 
+
+You can install Helm in any a development machine, use `helm template` to create a single file with all the resources for the application and install it by just using `kubectl apply -f resources.yaml`.
 
 
 ### Going back to our installation with values file:
