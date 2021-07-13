@@ -2,7 +2,7 @@ The correct command to install an application is:
 
 `helm install `
 
-We are going to set the **application storage** to **false** since our ephemeral working environment does not offer a persistent volume and it will cause an error in our deployment. In order to do that, we need to change the `persistent` option to `false`. You can locate this option  **in or around line 707** in `values.yaml`:
+One of the available options to configure our chart is to set the **application storage** to **false**. In fact, this is needed since our ephemeral working environment does not offer a persistent volume and it will cause an error in our installation. In order to do that, we need to change the `persistent` option to `false`. You can locate this option  **in or around line 707** in `values.yaml`:
 
 ```
 persistence:
@@ -19,11 +19,11 @@ There are two ways we can customize the installation of the Jenkins chart with t
 
 Let's analyze the command above:
 
-The first `jenkins` after `helm install` is the name we are going to give to our deployment.
+The first `jenkins` after `helm install` is the name we are going to give to our application.
 
 `jenkins/jenkins` is the name of the repo and the name of the chart we want to install from that repo. 
 
-`-n jenkins` is the namespace where we are going to install the application. 
+`-n jenkins` is the namespace where we are going to install the application (created in the previous step). 
 
 `--version` is the chart version. 
 
@@ -31,7 +31,9 @@ The first `jenkins` after `helm install` is the name we are going to give to our
 
 `--dry-run` is to see the files we are going to create when we execute the command but not apply the changes yet.
 
-2. Another option is to pass the `values.yaml` file with the desired options (this is usually the preferred method as the file can be saved in version control). Go to the `values.yaml` file we created in VSCode, delete everything the persistence options we want to change (**Yes, delete the rest** - Helm will only change the persistent option to false and deploy all the rest of **default** options):
+2. Another option is to pass the `values.yaml` file with the desired options (this is usually the preferred method as the file can be saved in version control). 
+
+Go to the `values.yaml` file we created in VSCode, delete everything but the persistence options we want to change (**Yes, delete the rest** - Helm will only change the persistent option to false and deploy all the rest of **default** options):
 
 ```
 persistence:
@@ -40,12 +42,12 @@ persistence:
 
 ![Helm Logo](./../assets/values.png)
 
-Now let's run the command (still with `--dry-run` as we are not installing yet!):
+Now let's run a similar command that allows us to pass a file using the flag `-f` (still with `--dry-run` as we are not installing yet!):
 
 `helm install jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml --dry-run | less`{{execute}}
 
 
-### A trick for when you don't have Helm in all machines:
+### Side note: A trick for when you don't have Helm in all machines
 
 **Did you notice how you were able to see all the resources that were going to be created in your Kubernetes cluster when you added the `--dry-run` command (pod, secret, ConfigMap, etc)?**
 
@@ -53,7 +55,7 @@ An easier way to see the actual resources is to use `helm template`. This comman
 
 `helm template jenkins jenkins/jenkins -n jenkins --version 3.3.21 -f values.yaml --dry-run > resources.yaml`{{execute}}
 
-Take a look at the `resources.yaml` file in VSCode and see all the resources that Helm will install for you. This is useful in cases where the Helm client is no available in the machine that is connected to your Kubernetes cluster and you can just install the application by using `kubectl apply -f resources.yaml`.
+Take a look at the `resources.yaml` file in VSCode and see all the resources that Helm will install for you. This is useful in cases where the Helm client is no available in the machine that has access your Kubernetes cluster. You can install Helm in any other machine, use `helm template` to create a single file with all the resources for the application and install it by just using `kubectl apply -f resources.yaml`.
 
 
 ### Going back to our installation with values file:
@@ -65,8 +67,7 @@ In our case, we don't need helm template as we have Helm access so let's install
 
 ### Verifying application is running:
 
-
-Also, you can see if the pod is running:
+See if the pod is running:
 
 `kubectl get pods -n jenkins -w`{{execute}} (`-w` to follow but it is optional)
 
@@ -76,13 +77,13 @@ You can see the status and useful information about the Helm deployment (the sam
 
 `helm status jenkins -n jenkins`{{execute}}
 
-### Accesing application:
+### Accesing the Jenkins UI:
 
-Copy the command to get your console password (Step 1 in the Helm status message):
+Copy the command to get your console password (also displayed as Step 1 in the `helm status` message):
 
 `kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/chart-admin-password && echo`{{execute}}
 
-Now, `port-forward` the console so you can see it in your browser (the command is a bit different for our environment than the one provided by Helm status):
+Now, `port-forward` the console so you can see it in your browser (the command is a bit different for our environment than the one provided by `helm status`):
 
 `kubectl port-forward jenkins-0 8080:8080 --address 0.0.0.0 -n jenkins`{{execute}}
 
@@ -94,8 +95,9 @@ Login with the user **admin** and the password you retrieved. Notice in the bott
 
 Go back to the terminal window and press `Control+C` to stop forwarding. 
 
-**Question:**
+### Question:
 
-**What command do you think you can use to see all the applications installed using Helm (try looking at `helm -h`)?**
+**What command do you think you can use to see all the applications installed using Helm?**
+Always use `helm -h` when in doubt.
 
 Click on `Continue` to see the correct answer.
