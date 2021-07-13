@@ -1,3 +1,5 @@
+### Adding a Chart to our local environment 
+
 Now, let's explore the [Jenkins Helm Chart](https://github.com/jenkinsci/helm-charts/tree/main/charts/jenkins). First, we need to follow the documentation and add the public repository to be able to pull the chart using `helm repo add`. We will name it `jenkins` and provide the URL with the public location of such repo `https://charts.jenkins.io`.
 
 We also update to get the latest chart information. 
@@ -6,17 +8,26 @@ We also update to get the latest chart information.
 
 `helm repo update`{{execute}}
 
-Before we run any other command, let's create a [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces) to deploy Jenkins:
-
-`kubectl create ns jenkins`{{execute}}
 
 **Note: The `| less` option was added to most commands so you can scroll through the terminal. Exit that view mode by pressing `q`.**
 
-We can check the available versions by running: 
+We can search for the available versions by running: 
 
 `helm search repo jenkins/jenkins --versions | less`{{execute}}
 
-Notice there are two versions, one is the Helm chart i.e `3.3.21` version and the other one is the application version itself i.e `2.277.4`. In this case, we are going to install the chart version `3.3.21`. Helm gives us the option to customize the installation with different settings.
+`jenkins/jenkins` is the name of the repo and the name of the jenkins chart. 
+
+`--version` will provide us all the available versions. 
+
+Notice there are two versions in each line, one is the Helm chart (i.e `3.3.21`) version and the other one is the application version itself (i.e `2.277.4`). In this case, we are going to install the chart version `3.3.21`. 
+
+Before we run any other command, let's create a [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces) in Kubernetes to deploy Jenkins:
+
+`kubectl create ns jenkins`{{execute}}
+
+### Customizing the installation of a Chart
+
+Helm gives us the option to customize the installation with different settings.
 
 Let's find which values the Jenkins Chart allows us to modify (the options shown are the **default** chart options). These options allows us to customize our installation (i.e which image to use for the controller, how much RAM/CPU the pod should use, etc). 
 
