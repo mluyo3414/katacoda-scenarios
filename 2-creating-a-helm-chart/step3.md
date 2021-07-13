@@ -1,6 +1,6 @@
 **Answer:** We need to include `service.yaml`, `serviceaccount.yaml`, and `deployment.yaml` in our case for the `hello-kubernetes` application.
 
-### Cleanup extra files not needed for simple functional chart:
+### Cleanup extra files not needed for simple functional chart
 
 Let's cleanup the template and add our application YAML files (under `/root/hello-kubernetes/deploy/resources/helm)`.
 
